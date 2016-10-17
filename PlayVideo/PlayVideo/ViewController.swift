@@ -28,6 +28,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
          ("videoScreenshot04", "I'm Your FATHER~", "3:30"),
          ("videoScreenshot05", "PPAP", "2:30"),
          ("videoScreenshot06", "Dog Sad Life", "1:30")]
+    let youtubeIDs = ["i_7ALQz9XFI",
+                      "UVzRPqbOGvU",]
     
     
     // MARK:-
@@ -89,7 +91,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         } else {
             print("--\n Status: \(player.status)\n Rate: \(player.rate)\n Error: \(player.error)\n")
         }
-        
     }
     
     // MARK:- UICollectionViewDataSource Methods
@@ -98,30 +99,41 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videoInfos.count;
+        return videoInfos.count + youtubeIDs.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let reuseIdentifier = "cell1"
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PlayVideoCollectionViewCell
-        
-        if indexPath.row == 0 {
+        if indexPath.row < videoInfos.count {
             
-            let video = Video(path: Bundle.main.path(forResource: "emoji zone", ofType: "mp4")!)
+            let reuseIdentifier = "cell1"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PlayVideoCollectionViewCell
             
-            cell.screenshotImageView.image = video.thumbnail
-            cell.videoNameLabel.text = video.name
-            cell.videoTimeLabel.text = video.duration
+            if indexPath.row == 0 {
+                
+                let video = Video(path: Bundle.main.path(forResource: "emoji zone", ofType: "mp4")!)
+                
+                cell.screenshotImageView.image = video.thumbnail
+                cell.videoNameLabel.text = video.name
+                cell.videoTimeLabel.text = video.duration
+                
+            } else {
+                
+                cell.screenshotImageView.image = UIImage(named: videoInfos[indexPath.row].image)
+                cell.videoNameLabel.text = videoInfos[indexPath.row].name
+                cell.videoTimeLabel.text = videoInfos[indexPath.row].time
+            }
+            
+            return cell
             
         } else {
             
-            cell.screenshotImageView.image = UIImage(named: videoInfos[indexPath.row].image)
-            cell.videoNameLabel.text = videoInfos[indexPath.row].name
-            cell.videoTimeLabel.text = videoInfos[indexPath.row].time
+            let reuseIdentifier = "cell2"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PlayYouTubeCollectionViewCell
+            cell.videoID = youtubeIDs[indexPath.row - videoInfos.count]
+            
+            return cell
         }
-        
-        return cell
     }
 
     // MARK:- Other Methods

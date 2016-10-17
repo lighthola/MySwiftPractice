@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106A43AA0476000AE92B5F60 /* Pods_PlayVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A28CC3294B120C9E0D565B /* Pods_PlayVideo.framework */; };
 		D3D356941DB089670006DE8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D356931DB089670006DE8D /* AppDelegate.swift */; };
 		D3D356961DB089670006DE8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D356951DB089670006DE8D /* ViewController.swift */; };
 		D3D356991DB089670006DE8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D356971DB089670006DE8D /* Main.storyboard */; };
@@ -15,9 +16,13 @@
 		D3D356A61DB08A320006DE8D /* PlayVideoCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D356A51DB08A320006DE8D /* PlayVideoCollectionViewFlowLayout.swift */; };
 		D3D356A81DB08A4E0006DE8D /* PlayVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D356A71DB08A4E0006DE8D /* PlayVideoCollectionViewCell.swift */; };
 		D3D356AA1DB0B8FD0006DE8D /* emoji zone.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D3D356A91DB0B3210006DE8D /* emoji zone.mp4 */; };
+		D3D356BC1DB49E630006DE8D /* PlayYouTubeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D356BB1DB49E630006DE8D /* PlayYouTubeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06AB9F6CAE014473DCD525E9 /* Pods-PlayVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayVideo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayVideo/Pods-PlayVideo.debug.xcconfig"; sourceTree = "<group>"; };
+		158DD15D12C261CEF309A591 /* Pods-PlayVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayVideo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayVideo/Pods-PlayVideo.release.xcconfig"; sourceTree = "<group>"; };
+		82A28CC3294B120C9E0D565B /* Pods_PlayVideo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayVideo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D356901DB089670006DE8D /* PlayVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D356931DB089670006DE8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D356951DB089670006DE8D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		D3D356A51DB08A320006DE8D /* PlayVideoCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D3D356A71DB08A4E0006DE8D /* PlayVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayVideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3D356A91DB0B3210006DE8D /* emoji zone.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "emoji zone.mp4"; sourceTree = "<group>"; };
+		D3D356BB1DB49E630006DE8D /* PlayYouTubeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayYouTubeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106A43AA0476000AE92B5F60 /* Pods_PlayVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E4C704F9A55C272578C0E3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06AB9F6CAE014473DCD525E9 /* Pods-PlayVideo.debug.xcconfig */,
+				158DD15D12C261CEF309A591 /* Pods-PlayVideo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		15254968532B715CC7371C2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82A28CC3294B120C9E0D565B /* Pods_PlayVideo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D3D356871DB089670006DE8D = {
 			isa = PBXGroup;
 			children = (
 				D3D356921DB089670006DE8D /* PlayVideo */,
 				D3D356911DB089670006DE8D /* Products */,
+				0E4C704F9A55C272578C0E3A /* Pods */,
+				15254968532B715CC7371C2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,6 +89,7 @@
 				D3D356931DB089670006DE8D /* AppDelegate.swift */,
 				D3D356951DB089670006DE8D /* ViewController.swift */,
 				D3D356A71DB08A4E0006DE8D /* PlayVideoCollectionViewCell.swift */,
+				D3D356BB1DB49E630006DE8D /* PlayYouTubeCollectionViewCell.swift */,
 				D3D356A51DB08A320006DE8D /* PlayVideoCollectionViewFlowLayout.swift */,
 				D3D356971DB089670006DE8D /* Main.storyboard */,
 				D3D356A91DB0B3210006DE8D /* emoji zone.mp4 */,
@@ -80,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3D356A21DB089670006DE8D /* Build configuration list for PBXNativeTarget "PlayVideo" */;
 			buildPhases = (
+				5F05A51224D925FBBFE0B5FF /* [CP] Check Pods Manifest.lock */,
 				D3D3568C1DB089670006DE8D /* Sources */,
 				D3D3568D1DB089670006DE8D /* Frameworks */,
 				D3D3568E1DB089670006DE8D /* Resources */,
+				7B7595630F73F4B9C1277B72 /* [CP] Embed Pods Frameworks */,
+				D06C756B57612F30AAB3B498 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -142,11 +172,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F05A51224D925FBBFE0B5FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7B7595630F73F4B9C1277B72 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlayVideo/Pods-PlayVideo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D06C756B57612F30AAB3B498 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlayVideo/Pods-PlayVideo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3D3568C1DB089670006DE8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D356BC1DB49E630006DE8D /* PlayYouTubeCollectionViewCell.swift in Sources */,
 				D3D356A81DB08A4E0006DE8D /* PlayVideoCollectionViewCell.swift in Sources */,
 				D3D356961DB089670006DE8D /* ViewController.swift in Sources */,
 				D3D356A61DB08A320006DE8D /* PlayVideoCollectionViewFlowLayout.swift in Sources */,
@@ -271,6 +350,7 @@
 		};
 		D3D356A31DB089670006DE8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06AB9F6CAE014473DCD525E9 /* Pods-PlayVideo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B62P32L56E;
@@ -285,6 +365,7 @@
 		};
 		D3D356A41DB089670006DE8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 158DD15D12C261CEF309A591 /* Pods-PlayVideo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B62P32L56E;
@@ -316,6 +397,7 @@
 				D3D356A41DB089670006DE8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

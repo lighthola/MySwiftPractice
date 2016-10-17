@@ -23,7 +23,7 @@
                                 <collectionViewLayout key="collectionViewLayout" id="QqP-cv-4DB" customClass="PlayVideoCollectionViewFlowLayout" customModule="PlayVideo" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell1" id="ZA5-Kx-GCg" customClass="PlayVideoCollectionViewCell" customModule="PlayVideo" customModuleProvider="target">
-                                        <rect key="frame" x="-2" y="0.0" width="379" height="220"/>
+                                        <rect key="frame" x="0.0" y="10" width="379" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="379" height="220"/>
@@ -71,6 +71,29 @@
                                             <outlet property="screenshotImageView" destination="pcg-VY-ycT" id="B30-GY-I2j"/>
                                             <outlet property="videoNameLabel" destination="E9V-QM-nuA" id="s3E-pM-5qM"/>
                                             <outlet property="videoTimeLabel" destination="hEg-Cw-AGz" id="X3U-Bu-fZE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell2" id="4i9-Jq-kMD" customClass="PlayYouTubeCollectionViewCell" customModule="PlayVideo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="240" width="375" height="220"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEa-jE-JO9" customClass="YTPlayerView">
+                                                    <color key="backgroundColor" red="0.8862745098" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="CEa-jE-JO9" secondAttribute="bottom" id="3i0-3Q-gT2"/>
+                                            <constraint firstAttribute="trailing" secondItem="CEa-jE-JO9" secondAttribute="trailing" id="LJl-ZH-eJD"/>
+                                            <constraint firstItem="CEa-jE-JO9" firstAttribute="leading" secondItem="4i9-Jq-kMD" secondAttribute="leading" id="PjS-qN-ELu"/>
+                                            <constraint firstItem="CEa-jE-JO9" firstAttribute="top" secondItem="4i9-Jq-kMD" secondAttribute="top" id="oJj-fv-twx"/>
+                                        </constraints>
+                                        <size key="customSize" width="375" height="220"/>
+                                        <connections>
+                                            <outlet property="youTubePlayerView" destination="CEa-jE-JO9" id="JnF-bn-nJ4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -38,7 +38,7 @@ struct Video {
         
         let second = String(seconds % 60)
         let minute = String(seconds / 60)
-        let hour = String(seconds / 3600)
+        let hour   = String(seconds / 3600)
         
         if hour != "0" {
             return hour + ":" + minute + ":" + second
