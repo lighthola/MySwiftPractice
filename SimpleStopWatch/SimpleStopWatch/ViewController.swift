@@ -51,6 +51,7 @@ class ViewController: UIViewController {
         if !timer.isValid {
             
             timer = Timer(timeInterval: timeChangeFrequency, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+            // Fix UI update conflict with scroll view
             RunLoop.main.add(timer, forMode: .commonModes)
         }
     }
