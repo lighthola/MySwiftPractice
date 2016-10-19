@@ -49,6 +49,8 @@ class CenterViewController: UIViewController {
                 
                 imageOutput.outputSettings = [AVVideoCodecKey:AVVideoCodecJPEG]
                 if captureSession.canAddOutput(imageOutput) {
+                    
+                    // set image data output
                     captureSession.addOutput(imageOutput)
                 }
                 

@@ -47,8 +47,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // TODO: get real item
 
     }
     
