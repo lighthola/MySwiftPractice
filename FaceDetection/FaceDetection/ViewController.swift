@@ -8,93 +8,44 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     // MARK:- IBOutlet
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     
     // MARK:- Variable
     
     
     // MARK:- Constant
-    let images = ["1", "2"]
+    let images = ["1", "2", "3", "4", "5"]
     
     // MARK:-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imageView.image = UIImage(named: images[0])
-        FindFace()
+
     }
 
     // MARK:- Private Methods
-    fileprivate func FindFace() {
-        
-        guard let image = CIImage(image: imageView.image!) else {
-            return
-        }
-        
-        let accuracy = [CIDetectorAccuracy: CIDetectorTypeFace]
-        let detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: accuracy)
-        let faces = detector?.features(in: image, options: [CIDetectorSmile: true, CIDetectorEyeBlink: true])
-        
-        guard faces?.count != 0 else {
-            print("-- \n No Face!! \n--")
-            return
-        }
-        
-        print("-- \n \(faces!.count) Face!! \n--")
-        
-        for (index, item) in faces!.enumerated() {
-            
-            let face = item as! CIFaceFeature
-            
-            print("--")
-            
-            if face.hasSmile {
-                print(" Face \(index) has Smile, at \(face.mouthPosition)")
-                drawAt(face.mouthPosition)
-            }
-            
-            if face.hasLeftEyePosition {
-                print(" Face \(index) has Left Eye, at \(face.leftEyePosition)")
-                drawAt(face.leftEyePosition)
-            }
-            
-            if face.hasRightEyePosition {
-                print(" Face \(index) has Right Eye, at \(face.rightEyePosition)")
-                drawAt(face.rightEyePosition)
-            }
-            
-            print("--")
-        }
-        
+    
+    // MARK:- UICollectionViewDelegate Methods
+    // MARK:- UICollectionViewDataSource Methods
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
-    fileprivate func drawAt(_ point: CGPoint) {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let image = imageView.image!
+        let cellID = "cell"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ImageCollectionViewCell
+        cell.imageView.image = UIImage(named: images[indexPath.row])
         
-        // canvas size
-        UIGraphicsBeginImageContext(image.size)
-        
-        // Start draw at context (0, 0)
-        image.draw(at: CGPoint(x: 0, y: 0))
-        let context = UIGraphicsGetCurrentContext()
-        context?.setLineCap(CGLineCap.round)
-        context?.setLineJoin(CGLineJoin.round)
-        context?.setStrokeColor(UIColor.red.cgColor)
-        context?.setLineWidth(5.0)
-        context?.move(to: point)
-        context?.addLine(to: point)
-        context?.strokePath()
-        
-        // get new image frome context
-        imageView.image = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
+        return cell
     }
     
     // MARK:- Other Methods

@@ -12,6 +12,7 @@
 		D3D356F31DB75EF40006DE8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D356F11DB75EF40006DE8D /* Main.storyboard */; };
 		D3D356F51DB75EF40006DE8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D356F41DB75EF40006DE8D /* Assets.xcassets */; };
 		D3D356F81DB75EF40006DE8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D356F61DB75EF40006DE8D /* LaunchScreen.storyboard */; };
+		D3E2488A1DB86F33009103FA /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E248891DB86F33009103FA /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D3D356F41DB75EF40006DE8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3D356F71DB75EF40006DE8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3D356F91DB75EF40006DE8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3E248891DB86F33009103FA /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				D3D356ED1DB75EF40006DE8D /* AppDelegate.swift */,
 				D3D356EF1DB75EF40006DE8D /* ViewController.swift */,
 				D3D356F11DB75EF40006DE8D /* Main.storyboard */,
+				D3E248891DB86F33009103FA /* ImageCollectionViewCell.swift */,
 				D3D356F41DB75EF40006DE8D /* Assets.xcassets */,
 				D3D356F61DB75EF40006DE8D /* LaunchScreen.storyboard */,
 				D3D356F91DB75EF40006DE8D /* Info.plist */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3E2488A1DB86F33009103FA /* ImageCollectionViewCell.swift in Sources */,
 				D3D356F01DB75EF40006DE8D /* ViewController.swift in Sources */,
 				D3D356EE1DB75EF40006DE8D /* AppDelegate.swift in Sources */,
 			);
@@ -304,6 +308,7 @@
 				D3D356FE1DB75EF40006DE8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
