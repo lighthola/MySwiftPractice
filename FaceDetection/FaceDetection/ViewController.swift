@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView.image = UIImage(named: images[1])
+        imageView.image = UIImage(named: images[0])
         FindFace()
     }
 
@@ -77,8 +77,10 @@ class ViewController: UIViewController {
         
         let image = imageView.image!
         
+        // canvas size
         UIGraphicsBeginImageContext(image.size)
         
+        // Start draw at context (0, 0)
         image.draw(at: CGPoint(x: 0, y: 0))
         let context = UIGraphicsGetCurrentContext()
         context?.setLineCap(CGLineCap.round)
@@ -89,11 +91,10 @@ class ViewController: UIViewController {
         context?.addLine(to: point)
         context?.strokePath()
         
+        // get new image frome context
         imageView.image = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
-        
-        
     }
     
     // MARK:- Other Methods
