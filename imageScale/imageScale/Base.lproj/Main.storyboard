@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="imageScale" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ozz-Pb-vlk">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oju-KK-1m2">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Rz-1W-K52">
+                                            <subviews>
+                                                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girl" translatesAutoresizingMaskIntoConstraints="NO" id="hYh-IZ-Y58"/>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="hYh-IZ-Y58" secondAttribute="trailing" id="6KN-41-Kkq"/>
+                                                <constraint firstItem="hYh-IZ-Y58" firstAttribute="top" secondItem="8Rz-1W-K52" secondAttribute="top" id="E9j-qa-rd3"/>
+                                                <constraint firstItem="hYh-IZ-Y58" firstAttribute="leading" secondItem="8Rz-1W-K52" secondAttribute="leading" id="VEI-fu-UQY"/>
+                                                <constraint firstItem="hYh-IZ-Y58" firstAttribute="centerX" secondItem="8Rz-1W-K52" secondAttribute="centerX" id="gIB-1N-dvP"/>
+                                                <constraint firstItem="hYh-IZ-Y58" firstAttribute="centerY" secondItem="8Rz-1W-K52" secondAttribute="centerY" id="oNq-mR-vOr"/>
+                                                <constraint firstAttribute="bottom" secondItem="hYh-IZ-Y58" secondAttribute="bottom" id="yNF-7j-VJJ"/>
+                                            </constraints>
+                                            <connections>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="yK1-LB-GH5"/>
+                                            </connections>
+                                        </scrollView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="8Rz-1W-K52" secondAttribute="trailing" id="71h-yT-hkB"/>
+                                        <constraint firstItem="8Rz-1W-K52" firstAttribute="top" secondItem="oju-KK-1m2" secondAttribute="top" id="9Nq-9m-97Z"/>
+                                        <constraint firstItem="8Rz-1W-K52" firstAttribute="leading" secondItem="oju-KK-1m2" secondAttribute="leading" id="VxC-PV-vcG"/>
+                                        <constraint firstAttribute="bottom" secondItem="8Rz-1W-K52" secondAttribute="bottom" id="pSi-B2-FvC"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ozz-Pb-vlk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3UQ-NU-gcZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Ozz-Pb-vlk" secondAttribute="trailing" id="Mdg-Zp-U4B"/>
+                            <constraint firstItem="Ozz-Pb-vlk" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="R9E-fq-r3c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ozz-Pb-vlk" secondAttribute="bottom" id="fJm-ho-VPP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hYh-IZ-Y58" id="aSB-eF-WeY"/>
+                        <outlet property="scrollView" destination="8Rz-1W-K52" id="4zu-Zs-wN1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="girl" width="1080" height="1349"/>
+    </resources>
+</document>
