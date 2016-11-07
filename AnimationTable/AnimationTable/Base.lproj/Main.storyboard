@@ -96,6 +96,13 @@
                                     <action selector="CABaseAnimationBtnPressed:" destination="Pl8-Mb-AMd" eventType="touchUpInside" id="kKs-Zv-Si5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzS-ib-IQX">
+                                <rect key="frame" x="268" y="591" width="91" height="30"/>
+                                <state key="normal" title="CATransation"/>
+                                <connections>
+                                    <action selector="CATransationBtnPressed:" destination="Pl8-Mb-AMd" eventType="touchUpInside" id="JkN-QR-Dt3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -104,6 +111,8 @@
                             <constraint firstItem="Bmr-Au-sDd" firstAttribute="top" secondItem="ATA-nH-9rW" secondAttribute="bottom" constant="8" id="L57-tl-7ah"/>
                             <constraint firstItem="aN5-nk-zPL" firstAttribute="leading" secondItem="24b-vs-iHE" secondAttribute="leadingMargin" id="N2u-7E-mjk"/>
                             <constraint firstItem="lpe-AQ-AfR" firstAttribute="centerX" secondItem="24b-vs-iHE" secondAttribute="centerX" id="Tk5-7c-SQ4"/>
+                            <constraint firstItem="ATA-nH-9rW" firstAttribute="top" secondItem="GzS-ib-IQX" secondAttribute="bottom" constant="8" id="ZAd-Wt-1xu"/>
+                            <constraint firstItem="GzS-ib-IQX" firstAttribute="trailing" secondItem="24b-vs-iHE" secondAttribute="trailingMargin" id="a0Z-77-fsL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ATA-nH-9rW" secondAttribute="trailing" id="chH-h5-LfW"/>
                             <constraint firstItem="8WT-A8-OAD" firstAttribute="centerY" secondItem="24b-vs-iHE" secondAttribute="centerY" multiplier="1/2" id="qPT-cD-u0q"/>
                             <constraint firstItem="Bmr-Au-sDd" firstAttribute="top" secondItem="aN5-nk-zPL" secondAttribute="bottom" constant="8" id="vuM-YN-upj"/>
