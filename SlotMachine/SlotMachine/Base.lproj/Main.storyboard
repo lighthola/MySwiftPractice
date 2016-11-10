@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlotMachine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4R-HQ-IJM">
+                                <rect key="frame" x="0.0" y="0.0" width="500" height="375"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="k7u-83-b1P"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="AQM-i7-Keq"/>
+                                </connections>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYy-j9-pzD">
+                                <rect key="frame" x="500" y="0.0" width="167" height="375"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXZ-88-we4">
+                                        <rect key="frame" x="55.5" y="50" width="56" height="275"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dXZ-88-we4" firstAttribute="centerY" secondItem="dYy-j9-pzD" secondAttribute="centerY" id="54Z-8T-K31"/>
+                                    <constraint firstItem="dXZ-88-we4" firstAttribute="height" secondItem="dYy-j9-pzD" secondAttribute="height" constant="-100" id="BTA-UV-uSb"/>
+                                    <constraint firstItem="dXZ-88-we4" firstAttribute="centerX" secondItem="dYy-j9-pzD" secondAttribute="centerX" id="F6L-UU-n51"/>
+                                    <constraint firstItem="dXZ-88-we4" firstAttribute="width" secondItem="dYy-j9-pzD" secondAttribute="width" multiplier="1/3" id="HBb-AL-ZEF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="B4R-HQ-IJM" secondAttribute="bottom" id="NTB-ba-uOE"/>
+                            <constraint firstItem="B4R-HQ-IJM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="3/4" id="PuW-PQ-loH"/>
+                            <constraint firstItem="B4R-HQ-IJM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Y10-mD-dtA"/>
+                            <constraint firstItem="B4R-HQ-IJM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="b73-Wq-TkP"/>
+                            <constraint firstItem="dYy-j9-pzD" firstAttribute="height" secondItem="B4R-HQ-IJM" secondAttribute="height" id="e4z-DW-uPf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dYy-j9-pzD" secondAttribute="bottom" id="fMn-ax-zRe"/>
+                            <constraint firstAttribute="trailing" secondItem="dYy-j9-pzD" secondAttribute="trailing" id="hz1-EP-0mx"/>
+                            <constraint firstItem="dYy-j9-pzD" firstAttribute="leading" secondItem="B4R-HQ-IJM" secondAttribute="trailing" id="st6-CS-3Q7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="slotHandleBaseView" destination="dYy-j9-pzD" id="HmS-gh-UU3"/>
+                        <outlet property="slotHandleView" destination="dXZ-88-we4" id="WXo-sr-yZr"/>
+                        <outlet property="slotPicker" destination="B4R-HQ-IJM" id="J5p-lY-Uan"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118.29085457271366" y="122.40000000000001"/>
+        </scene>
+    </scenes>
+</document>

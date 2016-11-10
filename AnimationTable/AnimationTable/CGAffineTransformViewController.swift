@@ -65,6 +65,7 @@ class CGAffineTransformViewController: UIViewController, CAAnimationDelegate {
         
         newRect.origin.y = newRect.size.height / 2
         flipLayer.frame = newRect
+        // default is (0.5, 0.5), center for super view.
         flipLayer.anchorPoint = CGPoint(x: 0.5, y: 1)
         
         self.shape.layer.addSublayer(flipLayer)
@@ -147,6 +148,7 @@ class CGAffineTransformViewController: UIViewController, CAAnimationDelegate {
         
         showLog()
         
+        //
         CATransaction.setDisableActions(true)
         
         let animation1 = CABasicAnimation(keyPath: "position")
@@ -154,9 +156,9 @@ class CGAffineTransformViewController: UIViewController, CAAnimationDelegate {
         animation1.toValue = CGPoint(x: self.shape.layer.position.x, y: self.shape.layer.position.y + 100)
         
         // default is 0
-        let animation2 = CABasicAnimation(keyPath: "transform.rotation.x")
+        let animation2 = CABasicAnimation(keyPath: "transform.rotation.z")
         animation2.fromValue = 0
-        animation2.toValue =  M_PI / 2.0
+        animation2.toValue =  M_PI * 12
         
         // default is 1
         let animation3 = CABasicAnimation(keyPath: "transform.scale.x")
@@ -178,7 +180,7 @@ class CGAffineTransformViewController: UIViewController, CAAnimationDelegate {
         // -
         animationGroup.duration = 1
         animationGroup.repeatCount = 1
-        animationGroup.animations = [ animation4]
+        animationGroup.animations = [animation2, animation4]
         animationGroup.delegate = self
         
         self.shape.layer.add(animationGroup, forKey: "AnimationGO")
@@ -192,7 +194,7 @@ class CGAffineTransformViewController: UIViewController, CAAnimationDelegate {
         UIView.animate(withDuration: 1, delay: 0, options: [.curveEaseOut], animations: {
             
             print(self.shape.transform)
-            let transform1 = self.shape.transform.translatedBy(x: 0, y: isEven ? 50 : 50).rotated(by: CGFloat(M_PI / 180.0 * (isEven ? 180 : 0)))
+            let transform1 = self.shape.transform.translatedBy(x: 0, y: 50).rotated(by: CGFloat(M_PI / 20))
             self.shape.transform = transform1
             
         }, completion: { (finish) in
