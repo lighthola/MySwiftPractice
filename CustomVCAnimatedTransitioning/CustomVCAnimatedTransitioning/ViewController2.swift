@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+class ViewController2: UIViewController, UIViewControllerTransitioningDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,16 @@ class ViewController2: UIViewController {
     // MARK:- IBAction Methods
     @IBAction func backBtnPressed(_ sender: Any) {
         
+        self.transitioningDelegate = self
         dismiss(animated: true, completion: nil);
+    }
+    
+    // MARK:- UIViewControllerTransitioningDelegate
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        let animateController = CustomPresentAnimationController()
+        animateController.isPresenting = false
+        return animateController
     }
     
     

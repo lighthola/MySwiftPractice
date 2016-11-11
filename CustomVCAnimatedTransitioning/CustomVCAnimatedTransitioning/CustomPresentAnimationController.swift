@@ -10,6 +10,18 @@ import UIKit
 
 class CustomPresentAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
 
+    // MARK:- IBOutlet
+    
+    
+    // MARK:- Variable
+    var isPresenting = true
+    
+    // MARK:- Constant
+    
+    
+    // MARK:-
+    
+    
     // MARK:- UIViewControllerAnimatedTransitioning Methods
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 2.5
@@ -24,16 +36,33 @@ class CustomPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
         let bounds = UIScreen.main.bounds
         
         // set animate start point
-        toVC.view.frame = finalFrameForVC.offsetBy(dx: 0, dy: bounds.size.height)
-        toVC.view.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0, 0, 1)
-        
-        containerView.addSubview(toVC.view)
-        
+        if isPresenting {
+            
+            toVC.view.frame = finalFrameForVC.offsetBy(dx: 0, dy: bounds.size.height)
+            toVC.view.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0, 0, 1)
+            containerView.addSubview(toVC.view)
+        } else {
+            
+            fromVC.view.frame = bounds
+            // rotate a little first, to make sure dismiss will rotate smae with presenting.
+            fromVC.view.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI * -0.00001), 0, 0, 1)
+            containerView.addSubview(toVC.view)
+            containerView.addSubview(fromVC.view)
+        }
+    
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [.curveLinear], animations: {
             
-            fromVC.view.alpha = 0.5
-            toVC.view.frame = finalFrameForVC
-            toVC.view.layer.transform = CATransform3DRotate(toVC.view.layer.transform, CGFloat(M_PI), 0, 0, 1)
+            if self.isPresenting {
+                
+                fromVC.view.alpha = 0.5
+                toVC.view.frame = finalFrameForVC
+                toVC.view.layer.transform = CATransform3DRotate(toVC.view.layer.transform, CGFloat(M_PI), 0, 0, 1)
+            } else {
+                
+                fromVC.view.alpha = 0.5
+                fromVC.view.frame = finalFrameForVC.offsetBy(dx: 0, dy: bounds.size.height)
+                fromVC.view.layer.transform = CATransform3DRotate(fromVC.view.layer.transform, CGFloat(M_PI * -0.99999), 0, 0, 1)
+            }
         }) { (finished) in
             
             // call this to remove fromVC
