@@ -44,7 +44,7 @@ class CustomPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
         } else {
             
             fromVC.view.frame = bounds
-            // rotate a little first, to make sure dismiss will rotate smae with presenting.
+            // rotate a little first, to make sure dismiss will rotate same side with presenting.
             fromVC.view.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI * -0.00001), 0, 0, 1)
             containerView.addSubview(toVC.view)
             containerView.addSubview(fromVC.view)
