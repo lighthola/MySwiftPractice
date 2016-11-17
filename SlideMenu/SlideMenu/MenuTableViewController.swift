@@ -45,6 +45,7 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // change parent navi bar title when cell select
         let vc = self.parent as! ViewController
         vc.title = menuItems[indexPath.row]
         vc.hamburgerBtnPressed("")

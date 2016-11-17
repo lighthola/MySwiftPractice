@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         didSet{
             let btn = UIButton(type: .system)
             btn.frame = CGRect(x: 10, y: 0, width: 30, height: 30)
+            
             // return an original image, not changed to default blue btn color.
             btn.setImage(UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal), for: .normal)
             btn.addTarget(self, action: #selector(hamburgerBtnPressed(_:)), for: .touchUpInside)
@@ -28,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var maskView: UIView?
     var menuFrame: CGRect {
         
+        // get frame by navigation bar and status bar
         var frame = self.view.bounds
         frame.size.height = CGFloat(44 * menuVC!.menuItems.count) > CGFloat(UIScreen.main.bounds.height - self.navigationController!.navigationBar.bounds.size.height - UIApplication.shared.statusBarFrame.size.height) ? CGFloat(UIScreen.main.bounds.height - self.navigationController!.navigationBar.bounds.size.height - UIApplication.shared.statusBarFrame.size.height) : CGFloat(44 * menuVC!.menuItems.count)
         frame.origin.y = -frame.size.height + self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
@@ -50,7 +52,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         setBaseUI()
         
-        // change menu frame after orientation
+        // notification after orientation did change
         NotificationCenter.default.addObserver(self, selector:#selector(setSlideMenuForOrientation(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
@@ -75,17 +77,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private func setNavigationBarTranslucnet() {
         
-        let colorImage = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 0.5).image()
-        let clearImage = UIColor.clear.image()
-        
-        self.navigationController?.navigationBar.setBackgroundImage(colorImage, for: .default)
-        // clear the shadow line under navigation bar
-        self.navigationController?.navigationBar.shadowImage = clearImage
         self.navigationController?.navigationBar.isTranslucent = true
+        
+        // get image for background
+        let colorImage = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 0.5).image()
+        self.navigationController?.navigationBar.setBackgroundImage(colorImage, for: .default)
+        
+        // clear the shadow line under navigation bar
+        let clearImage = UIColor.clear.image()
+        self.navigationController?.navigationBar.shadowImage = clearImage
     }
     
     func setSlideMenuForOrientation(_ notification: Notification) {
     
+        // if actual orientation to change frame of menu
         if menuVC != nil && self.isOrientation == true {
             self.menuVC?.view.frame.size.height = menuFrame.size.height
             self.menuVC?.view.frame.origin.y = self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
@@ -96,26 +101,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         
-        // For real orientation
+        // flag for actual orientation
         self.isOrientation = true
     }
     
     // MARK:- IBAction Methods
     @IBAction func hamburgerBtnPressed(_ sender: Any) {
         
+        // disable hamburger untill animation finished
         let btn = self.hamburgerBtn.customView as! UIButton
         btn.isEnabled = false
         
+        // show menu
         if menuVC == nil {
+            
+            // hierarchy of ViewController
+            //          menu
+            //            |
+            //         maskView
+            //            |
+            //        self.view
             
             maskView = UIView(frame: self.tableView.frame)
             maskView?.backgroundColor = UIColor(white: 0, alpha: 0.2)
             maskView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             self.view.addSubview(maskView!)
             
+            // creating a container view that is added on parent view
             menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "menuVC") as? MenuTableViewController
             addChildViewController(menuVC!)
-            
             menuVC?.view.frame = menuFrame
             self.view.addSubview(menuVC!.view)
             menuVC?.didMove(toParentViewController: self)
@@ -123,26 +137,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             UIView.animate(withDuration: 0.3, delay: 0, options: [.curveLinear], animations: {
                 
                 self.menuVC?.view.frame.origin.y = self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
-                print("will show: \(self.tableView.contentOffset), menu height: \(self.menuVC!.view.frame.size.height)")
                 self.tableView.contentOffset.y -= self.menuVC!.view.frame.size.height
+                
                 self.hamburgerBtn.customView?.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI * 0.5), 0, 0, 1)
                 
             }, completion: { (isFinish) in
-                print("show: \(self.tableView.contentOffset)")
+
                 btn.isEnabled = true
             })
+            
+        // hide menu
         } else {
             
             UIView.animate(withDuration: 0.3, delay: 0, options: [.curveLinear], animations: {
                 
                 self.menuVC?.view.frame.origin.y = -self.menuVC!.view.frame.size.height + self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
-                print("will hide: \(self.tableView.contentOffset), menu height: \(self.menuVC!.view.frame.size.height)")
                 self.tableView.contentOffset.y += self.menuVC!.view.frame.size.height
                 
                 self.hamburgerBtn.customView?.layer.transform = CATransform3DIdentity
                 
             }, completion: { (isFinish) in
                 
+                // remove container view from superview
                 self.menuVC?.willMove(toParentViewController: nil)
                 self.menuVC?.view.removeFromSuperview()
                 self.menuVC?.removeFromParentViewController()
@@ -150,8 +166,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 self.maskView?.removeFromSuperview()
                 self.maskView = nil
-                
-                print("hide: \(self.tableView.contentOffset)")
                 
                 btn.isEnabled = true
             })
@@ -189,9 +203,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 extension UIColor {
     
+    // get color image for navigation bar background
     func image() -> UIImage {
-        
-        // navigation bar + status bar
+
+        // height = navigation bar + status bar
         let rect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 64)
         
         UIGraphicsBeginImageContext(rect.size)
