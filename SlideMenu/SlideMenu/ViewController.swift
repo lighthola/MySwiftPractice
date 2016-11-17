@@ -11,13 +11,30 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK:- IBOutlet
-    @IBOutlet weak var hamburgerBtn: UIBarButtonItem!
+    @IBOutlet weak var hamburgerBtn: UIBarButtonItem! {
+        didSet{
+            let btn = UIButton(type: .system)
+            btn.frame = CGRect(x: 10, y: 0, width: 30, height: 30)
+            // return an original image, not changed to default blue btn color.
+            btn.setImage(UIImage(named: "menu")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            btn.addTarget(self, action: #selector(hamburgerBtnPressed(_:)), for: .touchUpInside)
+            hamburgerBtn.customView = btn
+        }
+    }
     @IBOutlet weak var tableView: UITableView!
-    
     
     // MARK:- Variable
     var menuVC: MenuTableViewController?
     var maskView: UIView?
+    var menuFrame: CGRect {
+        
+        var frame = self.view.bounds
+        frame.size.height = CGFloat(44 * menuVC!.menuItems.count) > CGFloat(UIScreen.main.bounds.height - self.navigationController!.navigationBar.bounds.size.height - UIApplication.shared.statusBarFrame.size.height) ? CGFloat(UIScreen.main.bounds.height - self.navigationController!.navigationBar.bounds.size.height - UIApplication.shared.statusBarFrame.size.height) : CGFloat(44 * menuVC!.menuItems.count)
+        frame.origin.y = -frame.size.height + self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
+        
+        return frame
+    }
+    var isOrientation = false
     
     // MARK:- Constant
     let news:[(mainImage: String, title:String, author: String, authorImage: String)] =
@@ -33,19 +50,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         setBaseUI()
         
+        // change menu frame after orientation
+        NotificationCenter.default.addObserver(self, selector:#selector(setSlideMenuForOrientation(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self)
     }
 
     // MARK:- Set UI
     private func setBaseUI() {
-        
-        // return an original image, not changed to default blue btn color.
-        hamburgerBtn.image? = UIImage(named: "menu")!.withRenderingMode(.alwaysOriginal)
         
         self.tableView.separatorStyle = .none
         
@@ -63,12 +84,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
+    func setSlideMenuForOrientation(_ notification: Notification) {
+    
+        if menuVC != nil && self.isOrientation == true {
+            self.menuVC?.view.frame.size.height = menuFrame.size.height
+            self.menuVC?.view.frame.origin.y = self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
+            self.tableView.contentOffset.y -= self.menuVC!.view.frame.size.height
+            self.isOrientation = false
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        // For real orientation
+        self.isOrientation = true
+    }
+    
     // MARK:- IBAction Methods
     @IBAction func hamburgerBtnPressed(_ sender: Any) {
         
+        let btn = self.hamburgerBtn.customView as! UIButton
+        btn.isEnabled = false
+        
         if menuVC == nil {
             
-            maskView = UIView(frame: self.view.frame)
+            maskView = UIView(frame: self.tableView.frame)
             maskView?.backgroundColor = UIColor(white: 0, alpha: 0.2)
             maskView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             self.view.addSubview(maskView!)
@@ -76,29 +116,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             menuVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "menuVC") as? MenuTableViewController
             addChildViewController(menuVC!)
             
-            var frame = self.view.bounds
-            frame.size.height = CGFloat(44 * menuVC!.menuItems.count) > CGFloat(UIScreen.main.bounds.height - self.navigationController!.navigationBar.bounds.size.height - UIApplication.shared.statusBarFrame.size.height) ? CGFloat(UIScreen.main.bounds.height - self.navigationController!.navigationBar.bounds.size.height - UIApplication.shared.statusBarFrame.size.height) : CGFloat(44 * menuVC!.menuItems.count)
-            frame.origin.y = -frame.size.height + self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
-            
-            menuVC?.view.frame = frame
+            menuVC?.view.frame = menuFrame
             self.view.addSubview(menuVC!.view)
             menuVC?.didMove(toParentViewController: self)
             
-            UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear], animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.curveLinear], animations: {
                 
-                self.view.frame.origin.y = frame.size.height
+                self.menuVC?.view.frame.origin.y = self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
+                print("will show: \(self.tableView.contentOffset), menu height: \(self.menuVC!.view.frame.size.height)")
+                self.tableView.contentOffset.y -= self.menuVC!.view.frame.size.height
+                self.hamburgerBtn.customView?.layer.transform = CATransform3DMakeRotation(CGFloat(M_PI * 0.5), 0, 0, 1)
                 
             }, completion: { (isFinish) in
-                
+                print("show: \(self.tableView.contentOffset)")
+                btn.isEnabled = true
             })
         } else {
             
-            self.maskView?.removeFromSuperview()
-            self.maskView = nil
-            
-            UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear], animations: {
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.curveLinear], animations: {
                 
-                self.view.frame.origin.y = 0
+                self.menuVC?.view.frame.origin.y = -self.menuVC!.view.frame.size.height + self.navigationController!.navigationBar.bounds.size.height + UIApplication.shared.statusBarFrame.size.height
+                print("will hide: \(self.tableView.contentOffset), menu height: \(self.menuVC!.view.frame.size.height)")
+                self.tableView.contentOffset.y += self.menuVC!.view.frame.size.height
+                
+                self.hamburgerBtn.customView?.layer.transform = CATransform3DIdentity
                 
             }, completion: { (isFinish) in
                 
@@ -106,7 +147,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.menuVC?.view.removeFromSuperview()
                 self.menuVC?.removeFromParentViewController()
                 self.menuVC = nil
-        
+                
+                self.maskView?.removeFromSuperview()
+                self.maskView = nil
+                
+                print("hide: \(self.tableView.contentOffset)")
+                
+                btn.isEnabled = true
             })
         }
     }
@@ -131,7 +178,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
-    
     
     
     // MARK:- Other Methods

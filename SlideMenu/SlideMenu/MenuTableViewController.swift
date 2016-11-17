@@ -26,6 +26,7 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
 
         self.tableView.separatorStyle = .none
+        
     }
     
     // MARK:- UITableViewDelegate, UITableViewDataSource
@@ -40,6 +41,13 @@ class MenuTableViewController: UIViewController, UITableViewDelegate, UITableVie
         cell.titleLabel.text = menuItems[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let vc = self.parent as! ViewController
+        vc.title = menuItems[indexPath.row]
+        vc.hamburgerBtnPressed("")
     }
 
     // MARK:- Other Methods
