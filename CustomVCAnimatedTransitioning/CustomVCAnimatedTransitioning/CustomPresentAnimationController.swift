@@ -61,7 +61,8 @@ class CustomPresentAnimationController: NSObject, UIViewControllerAnimatedTransi
                 
                 fromVC.view.alpha = 0.5
                 fromVC.view.frame = finalFrameForVC.offsetBy(dx: 0, dy: bounds.size.height)
-                fromVC.view.layer.transform = CATransform3DRotate(fromVC.view.layer.transform, CGFloat(M_PI * -0.99999), 0, 0, 1)
+                let transform = CATransform3DRotate(fromVC.view.layer.transform, CGFloat(M_PI * -0.99999), 0, 0, 1)
+                fromVC.view.layer.transform = CATransform3DScale(transform, 0.1, 0.1, 1)
             }
         }) { (finished) in
             
