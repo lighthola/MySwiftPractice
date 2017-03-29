@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MasonryLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xLD-iP-ZU0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="9Fy-zx-dxJ" customClass="MasonryLayout" customModule="MasonryLayout" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cell" reuseIdentifier="cell" id="xD1-jY-zC9" customClass="ImageCollectionViewCell" customModule="MasonryLayout" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="71B-EP-pe4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="71B-EP-pe4" firstAttribute="leading" secondItem="xD1-jY-zC9" secondAttribute="leading" id="D7c-ni-7Hi"/>
+                                            <constraint firstAttribute="bottom" secondItem="71B-EP-pe4" secondAttribute="bottom" id="MKF-Hy-XTf"/>
+                                            <constraint firstItem="71B-EP-pe4" firstAttribute="top" secondItem="xD1-jY-zC9" secondAttribute="top" id="e0j-Ry-UAy"/>
+                                            <constraint firstAttribute="trailing" secondItem="71B-EP-pe4" secondAttribute="trailing" id="uLU-pB-l9g"/>
+                                        </constraints>
+                                        <size key="customSize" width="100" height="100"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="71B-EP-pe4" id="fSf-yC-xEC"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgS-f3-J4X">
+                                <rect key="frame" x="8" y="629" width="69" height="30"/>
+                                <state key="normal" title="load more"/>
+                                <connections>
+                                    <action selector="loadMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PFW-Rk-n99"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xLD-iP-ZU0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5CR-7w-yO7"/>
+                            <constraint firstItem="xLD-iP-ZU0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9EW-wb-JCN"/>
+                            <constraint firstAttribute="trailing" secondItem="xLD-iP-ZU0" secondAttribute="trailing" id="QoX-9p-bhS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xLD-iP-ZU0" secondAttribute="bottom" id="YrS-QV-TWB"/>
+                            <constraint firstItem="VgS-f3-J4X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="lU4-iz-0kg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VgS-f3-J4X" secondAttribute="bottom" constant="8" id="sUd-Ro-qMw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="xLD-iP-ZU0" id="art-uw-Wlk"/>
+                        <outlet property="masonryLayout" destination="9Fy-zx-dxJ" id="Xdw-ad-YS8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="C3w-7n-7TD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iC-HV-eFr" customClass="CirccularView" customModule="MasonryLayout" customModuleProvider="target">
+                            <rect key="frame" x="162.5" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="5iC-HV-eFr" secondAttribute="height" multiplier="1:1" id="eh2-0p-2XR"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                    <real key="value" value="-1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="5iC-HV-eFr" firstAttribute="top" secondItem="C3w-7n-7TD" secondAttribute="top" id="ibG-Nu-1Q2"/>
+                        <constraint firstItem="5iC-HV-eFr" firstAttribute="centerX" secondItem="C3w-7n-7TD" secondAttribute="centerX" id="nxm-LN-5Dn"/>
+                        <constraint firstAttribute="bottom" secondItem="5iC-HV-eFr" secondAttribute="bottom" id="rns-50-pTL"/>
+                    </constraints>
+                </collectionReusableView>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>

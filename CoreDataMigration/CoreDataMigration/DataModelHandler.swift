@@ -130,10 +130,7 @@ class DataModelHandler: NSObject {
     @discardableResult
     private func addPersistentStore() -> Bool {
         do {
-            persistentStore = try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: dbFileUrl, options: [
-                NSMigratePersistentStoresAutomaticallyOption: true,
-                NSInferMappingModelAutomaticallyOption: true
-                ])
+            persistentStore = try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: dbFileUrl, options:nil)
             /*// lightweight migration
              [
                 NSMigratePersistentStoresAutomaticallyOption: true,
