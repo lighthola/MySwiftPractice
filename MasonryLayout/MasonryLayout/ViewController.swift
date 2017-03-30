@@ -171,41 +171,13 @@ extension ViewController: UIScrollViewDelegate
             {
                 collectionView.contentInset.top = header.frame.height
                 indicator.startAnimating()
-                self.perform({ [unowned self] in
-                    //indicator.stopAnimating()
-                    //self.collectionView.contentInset = .zero
-                    print("closure do somthing... ...")
-                }, afterDelay: 2)
-                //self.perform(doSomething2, afterDelay: 2)
-//                self.perform(#selector(doSomething(string:)), with: "123", afterDelay: 1)
                 let dispatchTime = DispatchTime.now() + .seconds(2)
                 DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
                     indicator.stopAnimating()
                     self.collectionView.contentInset = .zero
                     self.collectionView.reloadData()
                 }
-                
             }
-        }
-    }
-    
-    var doSomething2: ()->Void {
-        return {
-            print("doSomething2")
-        }
-    }
-    
-    func doSomething(string: String) {
-        print(string)
-    }
-    
-    func perform(_ aClosure:@escaping ()->Void, afterDelay delay: TimeInterval) {
-        self.perform(#selector(fire(closure:)), with: aClosure, afterDelay: delay)
-    }
-    
-    func fire(closure:Any?) {
-        if let closure = closure as? ()->Void {
-            closure()
         }
     }
     

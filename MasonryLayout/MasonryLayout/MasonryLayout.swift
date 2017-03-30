@@ -57,11 +57,15 @@ class MasonryLayout: UICollectionViewFlowLayout
         
         let screenWidth = UIScreen.main.bounds.size.width
         itemWidth = (screenWidth - (minimumLineSpacing * CGFloat(maxColumns - 1) + sectionInset.left + sectionInset.right)) / CGFloat(maxColumns)
+        
+        // default item size
         let height = 60.0
         itemSize = CGSize(width: Double(itemWidth), height: height)
         
-        xOfColumns = [self.sectionInset.left]
+        // default height of columns
         maxYOfColumns = [CGFloat](repeating: sectionInset.top, count: maxColumns)
+        // To calculate x position of columns
+        xOfColumns = [self.sectionInset.left]
         if maxColumns > 1 {
             for i in 1 ... maxColumns {
                 let xPositionOfColumns = sectionInset.left + CGFloat(i) * (itemWidth + minimumInteritemSpacing)
@@ -69,6 +73,7 @@ class MasonryLayout: UICollectionViewFlowLayout
             }
         }
         
+        // Getting postion of items
         attributesArray = [UICollectionViewLayoutAttributes]()
         
         for i in 0 ... collectionView.numberOfItems(inSection: 0) - 1
@@ -139,12 +144,14 @@ class MasonryLayout: UICollectionViewFlowLayout
     
     override var collectionViewContentSize: CGSize
     {
+        // return the fianl height of collectionview
         let height = footerAttributes != nil ? maxYOfColumns!.sorted().last! + footerAttributes!.frame.height : maxYOfColumns!.sorted().last!
         return CGSize(width: 0, height: height)
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         
+        // Invalidating Layout when bounds be changed.
         let oldBounds = self.collectionView?.bounds
         if oldBounds?.width != newBounds.width {
             return false
@@ -158,14 +165,14 @@ class MasonryLayout: UICollectionViewFlowLayout
         
     }
     
-    // Controlling animation for inserting item
+    // Controlling ANIMATION for inserting item
     override func initialLayoutAttributesForAppearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         let attributes = super.initialLayoutAttributesForAppearingItem(at: itemIndexPath)
         attributes?.frame.origin.y = maxYOfColumns!.sorted().last! + 10
         return attributes
     }
     
-    // Controlling animation for deleting item
+    // Controlling ANIMATION for deleting item
 //    override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
 //        let attributes = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath)
 //        
