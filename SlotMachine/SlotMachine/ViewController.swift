@@ -80,7 +80,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         transformLayer.frame = newFrame
         var transform3D = CATransform3DIdentity
-        let angle = CGFloat(M_PI / 9)
+        let angle = CGFloat.pi / 9
         transform3D = CATransform3DRotate(transform3D, angle, -1, 1, 0)
         transformLayer.transform = transform3D
         transformLayer.anchorPoint = CGPoint(x: 0.5, y: 1)
@@ -95,7 +95,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         layer2.frame = transformLayer.bounds
         layer2.backgroundColor = UIColor.brown.cgColor
         var transform = CATransform3DMakeTranslation(layer2.bounds.size.width / 2 , 0, layer2.bounds.size.width / 2);
-        transform = CATransform3DRotate(transform, CGFloat(M_PI / 2), 0, 1, 0);
+        transform = CATransform3DRotate(transform, CGFloat.pi / 2, 0, 1, 0);
         layer2.transform = transform;
         transformLayer.addSublayer(layer2);
         
@@ -103,7 +103,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         layer3.frame = transformLayer.bounds
         layer3.backgroundColor = UIColor.purple.cgColor
         transform = CATransform3DMakeTranslation(-layer3.bounds.size.width / 2 , 0, layer3.bounds.size.width / 2);
-        transform = CATransform3DRotate(transform, CGFloat(M_PI / 2), 0, 1, 0);
+        transform = CATransform3DRotate(transform, CGFloat.pi / 2, 0, 1, 0);
         layer3.transform = transform;
         transformLayer.addSublayer(layer3);
         
@@ -121,7 +121,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         layer5.frame = layer5Frame
         layer5.backgroundColor = UIColor.black.cgColor
         transform = CATransform3DMakeTranslation(0 , -layer3.bounds.size.width / 2, layer3.bounds.size.width / 2);
-        transform = CATransform3DRotate(transform, CGFloat(M_PI / 2), 1, 0, 0);
+        transform = CATransform3DRotate(transform, CGFloat.pi / 2, 1, 0, 0);
         layer5.transform = transform;
         transformLayer.addSublayer(layer5);
 
@@ -144,7 +144,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         var transform3D = self.transformLayer.transform
         transform3D.m34 = -1.0 / 500.0
-        var angle = CGFloat(M_PI * 5/6)
+        var angle = CGFloat.pi * 5/6
         transform3D = CATransform3DRotate(transform3D, angle, -1, 0, 0)
         
         let timeFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
@@ -155,7 +155,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         CATransaction.setCompletionBlock {
         
             transform3D = CATransform3DIdentity
-            transform3D = CATransform3DRotate(transform3D, CGFloat(M_PI / 9), -1, 1, 0)
+            transform3D = CATransform3DRotate(transform3D, CGFloat.pi / 9, -1, 1, 0)
             transform3D.m34 = 0.0
             angle = CGFloat(0)
             transform3D = CATransform3DRotate(transform3D, angle, 1, 0, 0)
