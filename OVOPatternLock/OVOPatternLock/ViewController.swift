@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        patternLock.backgroundColor = UIColor.white
+        
         patternLock.deliverKey = { [unowned self] key in
             print("callback: \(key)")
             if key == "1234" {

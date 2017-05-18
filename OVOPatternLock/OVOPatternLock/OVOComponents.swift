@@ -57,6 +57,7 @@ class OVOCircle: UIView {
         c.beginPath()
         c.addPath(invPath.cgPath)
         c.setShadow(offset: .zero, blur: blur, color: shadow.cgColor)
+        c.setFillColor(UIColor.white.cgColor)
         c.fillPath(using: .evenOdd)
         
         c.restoreGState()
@@ -117,7 +118,7 @@ class OVOCircle: UIView {
 class OVOPattern: UIView {
     
     struct Setting {
-        var width: CGFloat = 5
+        var width: CGFloat = 10
         var cap: CGLineCap = .round
         var join: CGLineJoin = .round
         var color: CGColor = UIColor(white: 0.8, alpha: 1).cgColor
@@ -186,3 +187,4 @@ class OVOPattern: UIView {
         backgroundColor = UIColor.clear
     }
 }
+

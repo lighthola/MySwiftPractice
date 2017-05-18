@@ -11,28 +11,7 @@ import UIKit
 @IBDesignable
 class OVOPatternLock: UIView {
     
-    // MARK: - Pattern Base Setting
-    enum Settings: Int {
-        case Three = 3
-        case Four
-        case Five
-        
-        var size: Int {
-            return self.rawValue * self.rawValue
-        }
-        var padding: CGFloat {
-            return 32
-        }
-        var intervalCount: CGFloat {
-            return CGFloat(self.rawValue) * 2 - 1
-        }
-        func patternHeightBy(_ height: CGFloat)-> CGFloat {
-            return height - 4 * padding
-        }
-        func circleDiameterBy(_ width: CGFloat) -> CGFloat {
-            return (width - padding * 2) / intervalCount
-        }
-    }
+    // MARK: - Pattern Arrangement Settings
     
     @IBInspectable
     var size: Int = 3 {
@@ -46,41 +25,50 @@ class OVOPatternLock: UIView {
         }
         didSet {
             setNeedsDisplay()
-            settings = Settings(rawValue: size)!
         }
     }
-    private var settings: Settings = .Three
     
-    private lazy var circles: [OVOCircle] = {
+    @IBInspectable
+    var isRoundMode: Bool = false
+    
+    @IBInspectable
+    var circleColor: UIColor?
+    
+    @IBInspectable
+    var shadowColor: UIColor?
+    
+    private lazy var arrangement: OVOArrangement = {
         
-        let padding       = self.settings.padding
-        let height        = self.settings.patternHeightBy(self.bounds.height)
-        let intervalCount = self.settings.intervalCount
-        let intervalY     = height / intervalCount
-        let diameter      = self.settings.circleDiameterBy(self.bounds.width)
-        
-        var temp = [OVOCircle]()
-        for i in 0..<self.settings.size {
-            let rows   = CGFloat(i % self.size)
-            let x      = padding + rows * 2 * diameter + diameter / 2
-            let cloums = CGFloat(i / self.size)
-            let y      = 2 * padding + intervalY * 0.5 + cloums * 2 * intervalY
-            let center = CGPoint(x: x, y: y)
-            let circle = OVOCircle(center: center, diameter: diameter)
-            circle.id  = String(i)
-            self.addSubview(circle)
-            temp.append(circle)
+        if self.isRoundMode {
+            let settings = OVORoundArrangement.Settings(rawValue: self.size)!
+            return OVORoundArrangement(rect: self.bounds, settings: settings, toArrange: self.toArrange)
         }
-        return temp
+        else {
+            let settings = OVONormalArrangement.Settings(rawValue: self.size)!
+            return OVONormalArrangement(rect: self.bounds, settings: settings, toArrange: self.toArrange)
+        }
     }()
     
-    // MARK: - Gesture Recognizer
+    private func toArrange(circle: OVOCircle)->() {
+        
+        if let color = circleColor {
+            circle.color = color
+        }
+        
+        if let shadow = shadowColor {
+            circle.shadow = shadow
+        }
+
+        self.addSubview(circle)
+    }
+
+    // MARK: - Gesture Recognizer Settings
     private lazy var tap: OVOGestureRecognizer = {
         return OVOGestureRecognizer(view: self, type: .Tap) { (nizer) in
             print(nizer.location(in: self))
             let point = nizer.location(in: self)
             
-            for circle in self.circles {
+            for circle in self.arrangement.circles {
                 if circle.frame.contains(point) {
                     circle.isSelected = true
                 }
@@ -102,7 +90,7 @@ class OVOPatternLock: UIView {
             
             var toPoint = nizer.location(in: self)
             var isDrawing = false
-            for circle in self.circles {
+            for circle in self.arrangement.circles {
                 if circle.frame.contains(toPoint)
                 {
                     circle.isSelected = true
@@ -112,7 +100,7 @@ class OVOPatternLock: UIView {
                         if self.fromPoint != circle.center {
                             let stroedLine = OVOPattern.Line(from: self.fromPoint, to: circle.center)
                             self.pattern.storedLines.append(stroedLine)
-                            self.key += circle.id
+                            self.key += "-" + circle.id
                         }
                         toPoint = circle.center
                         print(self.pattern.storedLines.count)
@@ -125,6 +113,7 @@ class OVOPatternLock: UIView {
                 }
             }
             
+            // Drawing lines by call setNeedsDisplay() to call draw(rect:)
             if self.fromPoint != .zero {
                 self.pattern.currentLine = OVOPattern.Line(from: self.fromPoint, to: toPoint)
             }
@@ -138,11 +127,12 @@ class OVOPatternLock: UIView {
         return temp
     }()
     
+    // MARK: - Action for gesture
     private func cleanPattern() {
         self.pattern.isClean = true
         self.fromPoint = .zero
         self.key = ""
-        for circle in circles {
+        for circle in arrangement.circles {
             circle.isSelected = false
         }
     }
@@ -151,8 +141,9 @@ class OVOPatternLock: UIView {
     var deliverKey:((String)->())?
     
     
+    // MARK: -
     override func draw(_ rect: CGRect) {
-        _ = circles
+        _ = arrangement
         _ = tap
         _ = pan
         _ = pattern

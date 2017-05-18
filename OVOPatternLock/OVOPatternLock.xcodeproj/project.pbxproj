@@ -16,6 +16,7 @@
 		D31E94EF1EC950DB008E78B6 /* OVOPatternLockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E94EE1EC950DB008E78B6 /* OVOPatternLockUITests.swift */; };
 		D31E94FD1EC95143008E78B6 /* OVOComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E94FC1EC95143008E78B6 /* OVOComponents.swift */; };
 		D31E94FF1EC9830F008E78B6 /* OVOPatternLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E94FE1EC9830F008E78B6 /* OVOPatternLock.swift */; };
+		D32E17131ECD4D4900BBE320 /* OVOArrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32E17121ECD4D4900BBE320 /* OVOArrangement.swift */; };
 		D33C76DF1ECAE4AE00CD2470 /* OVOGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33C76DE1ECAE4AE00CD2470 /* OVOGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		D31E94F01EC950DB008E78B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D31E94FC1EC95143008E78B6 /* OVOComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOComponents.swift; sourceTree = "<group>"; };
 		D31E94FE1EC9830F008E78B6 /* OVOPatternLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOPatternLock.swift; sourceTree = "<group>"; };
+		D32E17121ECD4D4900BBE320 /* OVOArrangement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOArrangement.swift; sourceTree = "<group>"; };
 		D33C76DE1ECAE4AE00CD2470 /* OVOGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				D31E94CE1EC950DA008E78B6 /* AppDelegate.swift */,
 				D31E94D01EC950DA008E78B6 /* ViewController.swift */,
 				D31E94FC1EC95143008E78B6 /* OVOComponents.swift */,
+				D32E17121ECD4D4900BBE320 /* OVOArrangement.swift */,
 				D33C76DE1ECAE4AE00CD2470 /* OVOGestureRecognizer.swift */,
 				D31E94FE1EC9830F008E78B6 /* OVOPatternLock.swift */,
 				D31E94D21EC950DA008E78B6 /* Main.storyboard */,
@@ -276,6 +279,7 @@
 				D31E94FD1EC95143008E78B6 /* OVOComponents.swift in Sources */,
 				D31E94FF1EC9830F008E78B6 /* OVOPatternLock.swift in Sources */,
 				D31E94CF1EC950DA008E78B6 /* AppDelegate.swift in Sources */,
+				D32E17131ECD4D4900BBE320 /* OVOArrangement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6SP8MLFC5Y;
 				INFOPLIST_FILE = OVOPatternLock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.com.soft-world.OVOPatternLock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,6 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6SP8MLFC5Y;
 				INFOPLIST_FILE = OVOPatternLock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "tw.com.soft-world.OVOPatternLock";
 				PRODUCT_NAME = "$(TARGET_NAME)";
