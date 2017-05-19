@@ -90,7 +90,7 @@ class OVOCircle: UIView {
         return UIColor(white: white, alpha: 1).cgColor
     }
     
-    // MARK: - Initializer
+    // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         Initializer()
@@ -172,7 +172,7 @@ class OVOPattern: UIView {
         c.strokePath()
     }
     
-    // MARK: - Initializer
+    // MARK: Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializer()
@@ -183,6 +183,48 @@ class OVOPattern: UIView {
         initializer()
     }
     
+    private func initializer() {
+        backgroundColor = UIColor.clear
+    }
+}
+
+// MARK:- Initializer
+class OVOFadePattern: OVOPattern {
+    
+    override func draw(_ rect: CGRect) {
+        
+        guard let c = UIGraphicsGetCurrentContext() else {
+            fatalError("Current Context NOT Founds.")
+        }
+        
+        var setting = Setting()
+        c.setLineWidth(setting.width)
+        var cap = setting.cap
+        cap = .round
+        c.setLineCap(cap)
+        var join = setting.join
+        join = .bevel
+        c.setLineJoin(join)
+        
+        guard storedLines.count > 0 else {
+            return
+        }
+        
+        for x in 0..<storedLines.count {
+            c.move(to: storedLines[x].from)
+            for (i, line) in storedLines.enumerated() {
+                if i >= x {
+                    setting.color = UIColor(white: 0.2, alpha: 0.1).cgColor
+                    c.setStrokeColor(setting.color)
+                    c.addLine(to: line.to)
+                }
+            }
+            c.strokePath()
+        }
+        
+    }
+    
+    // MARK: Initializer
     private func initializer() {
         backgroundColor = UIColor.clear
     }

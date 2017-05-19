@@ -73,7 +73,7 @@ class OVOPatternLock: UIView {
                     circle.isSelected = true
                 }
             }
-       }
+        }
     }()
     
     private lazy var pan: OVOGestureRecognizer = {
@@ -83,46 +83,84 @@ class OVOPatternLock: UIView {
             guard nizer.state != .ended else {
                 print("END")
                 print(self.key)
-                self.deliverKey?(self.key)
+                self.toDeliverKey?(self.key)
                 self.cleanPattern()
                 return
             }
             
             var toPoint = nizer.location(in: self)
-            var isDrawing = false
-            for circle in self.arrangement.circles {
-                if circle.frame.contains(toPoint)
-                {
-                    circle.isSelected = true
-                    
-                    if self.fromPoint != .zero
+            
+            if self.isFadePattern {
+                for circle in self.arrangement.circles {
+                    if circle.frame.contains(toPoint)
                     {
-                        if self.fromPoint != circle.center {
-                            let stroedLine = OVOPattern.Line(from: self.fromPoint, to: circle.center)
-                            self.pattern.storedLines.append(stroedLine)
+                        if self.lastFadePatternMatchCirclePoint == circle.center {
+                            break
+                        }
+                        
+                        circle.isSelected = true
+                        if self.lastFadePatternMatchCirclePoint != nil {
                             self.key += "-" + circle.id
                         }
-                        toPoint = circle.center
-                        print(self.pattern.storedLines.count)
+                        else {
+                            self.key += circle.id
+                        }
+                        
+                        self.lastFadePatternMatchCirclePoint = circle.center
                     }
-                    else {
-                        self.key += circle.id
-                    }
-                
-                    self.fromPoint = circle.center
                 }
+                
+                guard self.fromPoint != .zero else {
+                    self.fromPoint = toPoint
+                    return
+                }
+                
+                if self.pattern.storedLines.count >= 10 {
+                    self.pattern.storedLines.removeFirst()
+                }
+                let line = OVOPattern.Line(from: self.fromPoint, to: toPoint)
+                self.pattern.storedLines.append(line)
+                self.fromPoint = toPoint
+                self.pattern.setNeedsDisplay()
             }
-            
-            // Drawing lines by call setNeedsDisplay() to call draw(rect:)
-            if self.fromPoint != .zero {
-                self.pattern.currentLine = OVOPattern.Line(from: self.fromPoint, to: toPoint)
+            else {
+                var isDrawing = false
+                for circle in self.arrangement.circles {
+                    if circle.frame.contains(toPoint)
+                    {
+                        circle.isSelected = true
+                        
+                        if self.fromPoint != .zero
+                        {
+                            if self.fromPoint != circle.center {
+                                let stroedLine = OVOPattern.Line(from: self.fromPoint, to: circle.center)
+                                self.pattern.storedLines.append(stroedLine)
+                                self.key += "-" + circle.id
+                            }
+                            toPoint = circle.center
+                            print(self.pattern.storedLines.count)
+                        }
+                        else {
+                            self.key += circle.id
+                        }
+                        
+                        self.fromPoint = circle.center
+                    }
+                }
+                
+                // Drawing lines by call setNeedsDisplay() to call draw(rect:)
+                if self.fromPoint != .zero {
+                    self.pattern.currentLine = OVOPattern.Line(from: self.fromPoint, to: toPoint)
+                }
             }
         }
     }()
     
+    var isFadePattern = true
+    private var lastFadePatternMatchCirclePoint: CGPoint?
     private var fromPoint: CGPoint = .zero
     private lazy var pattern: OVOPattern = {
-        let temp = OVOPattern(frame: self.bounds)
+        let temp = self.isFadePattern ? OVOFadePattern(frame: self.bounds) : OVOPattern(frame: self.bounds)
         self.addSubview(temp)
         return temp
     }()
@@ -135,10 +173,13 @@ class OVOPatternLock: UIView {
         for circle in arrangement.circles {
             circle.isSelected = false
         }
+        
+        // for fade pattern
+        self.lastFadePatternMatchCirclePoint = nil
     }
     
     private var key: String = ""
-    var deliverKey:((String)->())?
+    var toDeliverKey:((String)->())?
     
     
     // MARK: -
@@ -154,7 +195,7 @@ class OVOPatternLock: UIView {
     convenience init(frame: CGRect, size: Int = 3, getKey: @escaping (String)->()) {
         self.init(frame: frame)
         self.size = size
-        deliverKey = getKey
+        toDeliverKey = getKey
         Initializer()
     }
     
