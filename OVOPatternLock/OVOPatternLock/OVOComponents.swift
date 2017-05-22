@@ -188,7 +188,6 @@ class OVOPattern: UIView {
     }
 }
 
-// MARK:- Initializer
 class OVOFadePattern: OVOPattern {
     
     override func draw(_ rect: CGRect) {
@@ -197,36 +196,43 @@ class OVOFadePattern: OVOPattern {
             fatalError("Current Context NOT Founds.")
         }
         
-        var setting = Setting()
-        c.setLineWidth(setting.width)
-        var cap = setting.cap
-        cap = .round
-        c.setLineCap(cap)
-        var join = setting.join
-        join = .bevel
-        c.setLineJoin(join)
-        
-        guard storedLines.count > 0 else {
+        guard storedLines.count > 4 else {
             return
         }
         
-        for x in 0..<storedLines.count {
-            c.move(to: storedLines[x].from)
-            for (i, line) in storedLines.enumerated() {
-                if i >= x {
-                    setting.color = UIColor(white: 0.2, alpha: 0.1).cgColor
-                    c.setStrokeColor(setting.color)
-                    c.addLine(to: line.to)
+        let setting = Setting()
+        c.setLineWidth(setting.width)
+        c.setLineCap(setting.cap)
+        c.setLineJoin(setting.join)
+        
+        /*
+         Smooth hand drawing algorithm reference :
+         https://code.tutsplus.com/tutorials/smooth-freehand-drawing-on-ios--mobile-13164
+         */
+        for i in 1...(storedLines.count-1)/3
+        {
+            let path = UIBezierPath()
+            
+            for x in 0..<storedLines.count - 3 {
+                guard x%3 == 0 && i+x/3 >= (storedLines.count-1)/3 else {
+                    continue
                 }
+                
+                path.move(to: storedLines[x].from)
+                
+                guard i <= 1 else {
+                    path.addCurve(to: storedLines[x+3].from, controlPoint1: storedLines[x].to, controlPoint2: storedLines[x+1].to)
+                    continue
+                }
+                // Important!
+                storedLines[x+3].from = CGPoint(x: (storedLines[x+1].to.x + storedLines[x+3].to.x)/2.0, y: (storedLines[x+1].to.y + storedLines[x+3].to.y)/2.0)
+                path.addCurve(to: storedLines[x+3].from, controlPoint1: storedLines[x].to, controlPoint2: storedLines[x+1].to)
             }
+            
+            c.setStrokeColor(UIColor(white: 0.33, alpha: 0.33).cgColor)
+            c.addPath(path.cgPath)
             c.strokePath()
         }
-        
-    }
-    
-    // MARK: Initializer
-    private func initializer() {
-        backgroundColor = UIColor.clear
     }
 }
 

@@ -28,7 +28,8 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="size">
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundMode" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isFadePattern" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

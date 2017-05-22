@@ -32,6 +32,9 @@ class OVOPatternLock: UIView {
     var isRoundMode: Bool = false
     
     @IBInspectable
+    var isFadePattern: Bool = false
+    
+    @IBInspectable
     var circleColor: UIColor?
     
     @IBInspectable
@@ -156,7 +159,6 @@ class OVOPatternLock: UIView {
         }
     }()
     
-    var isFadePattern = true
     private var lastFadePatternMatchCirclePoint: CGPoint?
     private var fromPoint: CGPoint = .zero
     private lazy var pattern: OVOPattern = {
