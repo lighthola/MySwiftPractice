@@ -1,15 +1,15 @@
 //
-//  OVOPatternLockTests.swift
-//  OVOPatternLockTests
+//  CustomTabBarControllerTests.swift
+//  CustomTabBarControllerTests
 //
-//  Created by Bevis Chen on 2017/5/15.
+//  Created by Bevis Chen on 2017/5/24.
 //  Copyright © 2017年 Bevis Chen. All rights reserved.
 //
 
 import XCTest
-@testable import OVOPatternLock
+@testable import CustomTabBarController
 
-class OVOPatternLockTests: XCTestCase {
+class CustomTabBarControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,14 +21,6 @@ class OVOPatternLockTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCDF() {
-        
-    }
-    
-    func testABC() {
-        XCTAssert(true)
-    }
-    
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -38,7 +30,6 @@ class OVOPatternLockTests: XCTestCase {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
-            print("123")
         }
     }
     

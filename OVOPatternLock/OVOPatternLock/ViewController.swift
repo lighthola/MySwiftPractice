@@ -27,6 +27,10 @@ class ViewController: UIViewController {
         //patternLock.isHidden = true
     }
     
+    @IBAction func showBtnAction(_ sender: Any) {
+        
+        patternLock.isHidden = false
+    }
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }

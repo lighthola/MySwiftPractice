@@ -1,14 +1,14 @@
 //
-//  OVOPatternLockUITests.swift
-//  OVOPatternLockUITests
+//  CustomTabBarControllerUITests.swift
+//  CustomTabBarControllerUITests
 //
-//  Created by Bevis Chen on 2017/5/15.
+//  Created by Bevis Chen on 2017/5/24.
 //  Copyright © 2017年 Bevis Chen. All rights reserved.
 //
 
 import XCTest
 
-class OVOPatternLockUITests: XCTestCase {
+class CustomTabBarControllerUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
@@ -28,23 +28,9 @@ class OVOPatternLockUITests: XCTestCase {
         super.tearDown()
     }
     
-    
-    
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-        let app = XCUIApplication()
-        let coord1 = app.coordinate(withNormalizedOffset: CGVector(dx: 0.01, dy: 0.15))
-        let coord2 = coord1.withOffset(CGVector(dx: 100, dy: 100))
-        
-        coord1.press(forDuration: 1, thenDragTo: coord2)
-        
-        let coord3 = coord2.withOffset(CGVector(dx: 200, dy: 0))
-        coord2.press(forDuration: 1, thenDragTo: coord3)
-        let coord4 = coord3.withOffset(CGVector(dx: 0, dy: 200))
-        coord3.press(forDuration: 1, thenDragTo: coord4)
-        
     }
     
 }

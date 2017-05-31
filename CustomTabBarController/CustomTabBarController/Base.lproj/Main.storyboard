@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="OVOTabBarController" customModule="CustomTabBarController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4HM-MC-aZ3">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r14-iT-ZW2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="753-cK-niA" customClass="OVOTabBarItem" customModule="CustomTabBarController" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="unselected" value="icon1_unselected"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="selected" value="icon1_selected"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VxY-r3-Dzm" customClass="OVOTabBarItem" customModule="CustomTabBarController" customModuleProvider="target">
+                                                <rect key="frame" x="187.5" y="0.0" width="187.5" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="selected" value="icon2_selected"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="unselected" value="icon2_unselected"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="r14-iT-ZW2" firstAttribute="top" secondItem="4HM-MC-aZ3" secondAttribute="top" id="14b-E8-53z"/>
+                                    <constraint firstAttribute="height" constant="44" id="4Wk-Ry-nzO"/>
+                                    <constraint firstAttribute="bottom" secondItem="r14-iT-ZW2" secondAttribute="bottom" id="65a-iU-6QE"/>
+                                    <constraint firstAttribute="trailing" secondItem="r14-iT-ZW2" secondAttribute="trailing" id="SHg-8d-IhJ"/>
+                                    <constraint firstItem="r14-iT-ZW2" firstAttribute="leading" secondItem="4HM-MC-aZ3" secondAttribute="leading" id="tVM-jL-IBo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Elp-YF-qnJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Elp-YF-qnJ" secondAttribute="trailing" id="CPT-x7-e9b"/>
+                            <constraint firstItem="Elp-YF-qnJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FdX-HD-hUZ"/>
+                            <constraint firstItem="Elp-YF-qnJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="LVI-mP-Wsk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4HM-MC-aZ3" secondAttribute="bottom" id="Nno-LI-zvj"/>
+                            <constraint firstAttribute="trailing" secondItem="4HM-MC-aZ3" secondAttribute="trailing" id="Thz-yW-LqV"/>
+                            <constraint firstItem="4HM-MC-aZ3" firstAttribute="top" secondItem="Elp-YF-qnJ" secondAttribute="bottom" id="eRc-9X-yGZ"/>
+                            <constraint firstItem="4HM-MC-aZ3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w4v-3P-EdB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="transitionView" destination="Elp-YF-qnJ" id="C91-8M-BVN"/>
+                        <outletCollection property="tabBarItems" destination="753-cK-niA" collectionClass="NSMutableArray" id="jXP-Pg-7rH"/>
+                        <outletCollection property="tabBarItems" destination="VxY-r3-Dzm" collectionClass="NSMutableArray" id="JPm-8i-m9R"/>
+                        <segue destination="Zfx-kk-bdu" kind="custom" identifier="0" customClass="OVOTabBarControllerSegue" customModule="CustomTabBarController" customModuleProvider="target" id="ZIm-Qd-Z2E"/>
+                        <segue destination="kIv-sn-FvU" kind="custom" identifier="1" customClass="OVOTabBarControllerSegue" customModule="CustomTabBarController" customModuleProvider="target" id="eH5-gU-mD2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+        <!--View Controller1-->
+        <scene sceneID="e63-45-NjS">
+            <objects>
+                <viewController id="Zfx-kk-bdu" customClass="ViewController1" customModule="CustomTabBarController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BeK-7V-0Qm"/>
+                        <viewControllerLayoutGuide type="bottom" id="p5h-4V-nYr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gTo-cZ-mKb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ViewController1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptr-kY-XQw">
+                                <rect key="frame" x="76" y="314" width="222" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qU-1e-LbS">
+                                <rect key="frame" x="127.5" y="403" width="120" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Add item">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addItem:" destination="Zfx-kk-bdu" eventType="touchUpInside" id="06h-V1-IwN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8f-jV-COU">
+                                <rect key="frame" x="112" y="453" width="151" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Delete item">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteItem:" destination="Zfx-kk-bdu" eventType="touchUpInside" id="dz1-cO-dyY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80784314869999996" green="0.027450980619999999" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3qU-1e-LbS" firstAttribute="centerX" secondItem="gTo-cZ-mKb" secondAttribute="centerX" id="KXH-Mh-jU2"/>
+                            <constraint firstItem="Ptr-kY-XQw" firstAttribute="centerX" secondItem="gTo-cZ-mKb" secondAttribute="centerX" id="RsW-RR-v11"/>
+                            <constraint firstItem="3qU-1e-LbS" firstAttribute="top" secondItem="Ptr-kY-XQw" secondAttribute="bottom" constant="50" id="Wt0-th-u10"/>
+                            <constraint firstItem="Ptr-kY-XQw" firstAttribute="centerY" secondItem="gTo-cZ-mKb" secondAttribute="centerY" id="eAl-f4-NfQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qkh-El-XRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="-134.48275862068968"/>
+        </scene>
+        <!--View Controller2-->
+        <scene sceneID="2ip-h8-HDf">
+            <objects>
+                <viewController id="kIv-sn-FvU" customClass="ViewController2" customModule="CustomTabBarController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mhf-Ih-Owi"/>
+                        <viewControllerLayoutGuide type="bottom" id="32c-ga-hcE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fTQ-dc-FK1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ViewController2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdE-we-zer">
+                                <rect key="frame" x="74.5" y="314" width="226" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34117648010000001" green="0.62352943419999995" blue="0.16862745579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VdE-we-zer" firstAttribute="centerY" secondItem="fTQ-dc-FK1" secondAttribute="centerY" id="Yq2-cQ-GKO"/>
+                            <constraint firstItem="VdE-we-zer" firstAttribute="centerX" secondItem="fTQ-dc-FK1" secondAttribute="centerX" id="xo1-aY-mco"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="moD-rt-xtv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1078" y="548"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon1_selected" width="30" height="30"/>
+        <image name="icon1_unselected" width="29" height="29"/>
+        <image name="icon2_selected" width="31" height="31"/>
+        <image name="icon2_unselected" width="30" height="30"/>
+    </resources>
+</document>
