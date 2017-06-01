@@ -17,7 +17,9 @@ class OVOLayoutConstraint: NSLayoutConstraint {
         parent.translatesAutoresizingMaskIntoConstraints = false
         attached.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        /*
+         https://stackoverflow.com/questions/12873372/centering-a-view-in-its-superview-using-visual-format-language
+        */
         var vFormat = "V:[parent]-(<=1)-[attached]"
         var hFormat = "H:[parent]-(<=1)-[attached]"
         

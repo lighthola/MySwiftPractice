@@ -11,13 +11,6 @@ import UIKit
 @IBDesignable
 class OVOTabBarItem: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
     @IBInspectable
     var selected: UIImage? {
         didSet {
@@ -37,14 +30,14 @@ class OVOTabBarItem: UIView {
     
     var destinationViewController: UIViewController?
     
-    weak var button: UIButton!
+    
+    var button: UIButton!
     var performSegue:(()->())?
     var isDynamic = false
-    
+    weak var tabBarController: OVOTabBarController?
     
     override func draw(_ rect: CGRect) {
-        button.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        button.center = CGPoint(x: frame.width/2, y: frame.height/2)
+        button.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
     }
     
     // MARK: - Initializer
@@ -74,8 +67,12 @@ class OVOTabBarItem: UIView {
         self.button = button
         button.addTarget(self, action: #selector(btnAction), for: .touchUpInside)
         backgroundColor = .clear
+        button.imageView?.contentMode = .scaleAspectFit
         
         
+        /*
+         https://stackoverflow.com/questions/25666269/how-to-detect-orientation-change
+        */
         NotificationCenter.default.addObserver(self, selector: #selector(updateLayout(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
@@ -85,7 +82,7 @@ class OVOTabBarItem: UIView {
     }
     
     func btnAction() {
-        performSegue?()
+        tabBarController?.selectedIndex = self.tag
     }
     
     deinit {

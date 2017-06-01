@@ -18,6 +18,7 @@
 		D34388E01ED57A4A001C6711 /* OVOTabBarControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34388DF1ED57A4A001C6711 /* OVOTabBarControllerSegue.swift */; };
 		D34388E21ED6B891001C6711 /* OVOTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34388E11ED6B891001C6711 /* OVOTabBarItem.swift */; };
 		D34388E41ED6BBED001C6711 /* OVOLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34388E31ED6BBED001C6711 /* OVOLayoutConstraint.swift */; };
+		D34388E61EDECBAF001C6711 /* OVOGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34388E51EDECBAF001C6711 /* OVOGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D34388DF1ED57A4A001C6711 /* OVOTabBarControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOTabBarControllerSegue.swift; sourceTree = "<group>"; };
 		D34388E11ED6B891001C6711 /* OVOTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOTabBarItem.swift; sourceTree = "<group>"; };
 		D34388E31ED6BBED001C6711 /* OVOLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOLayoutConstraint.swift; sourceTree = "<group>"; };
+		D34388E51EDECBAF001C6711 /* OVOGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				D34388DF1ED57A4A001C6711 /* OVOTabBarControllerSegue.swift */,
 				D34388E11ED6B891001C6711 /* OVOTabBarItem.swift */,
 				D34388E31ED6BBED001C6711 /* OVOLayoutConstraint.swift */,
+				D34388E51EDECBAF001C6711 /* OVOGestureRecognizer.swift */,
 				D34388B31ED56E4B001C6711 /* Main.storyboard */,
 				D34388B61ED56E4B001C6711 /* Assets.xcassets */,
 				D34388B81ED56E4B001C6711 /* LaunchScreen.storyboard */,
@@ -280,6 +283,7 @@
 				D34388E41ED6BBED001C6711 /* OVOLayoutConstraint.swift in Sources */,
 				D34388B21ED56E4B001C6711 /* ViewController.swift in Sources */,
 				D34388B01ED56E4B001C6711 /* AppDelegate.swift in Sources */,
+				D34388E61EDECBAF001C6711 /* OVOGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,16 +28,16 @@ class OVOTabBarControllerSegue: UIStoryboardSegue {
         }
         
         defer {
-            print("child VC:\(tabBarController.childViewControllers.count)")
-            print("transition subviews:\(transitionView.subviews.count)")
+            //print("child VC:\(tabBarController.childViewControllers.count)")
+            //print("transition subviews:\(transitionView.subviews.count)")
         }
-        
-        tabBarController.lastAttachedView?.isHidden = true
-        
+                
         if tabBarController.attachedViewTags.contains(tag) {
             for attachedView in transitionView.subviews {
                 if attachedView.tag == tag {
-                    attachedView.isHidden = false
+                    transitionView.bringSubview(toFront: attachedView)
+                    animateTransition(last: tabBarController.lastAttachedView, new: attachedView)
+                    
                     tabBarController.lastAttachedView = attachedView
                 }
             }
@@ -48,12 +48,36 @@ class OVOTabBarControllerSegue: UIStoryboardSegue {
         else {
             destination.view.tag = tag
             tabBarController.attachedViewTags.append(tag)
+            
+            animateTransition(last: tabBarController.lastAttachedView, new: destination.view)
+
             tabBarController.lastAttachedView = destination.view
             
             OVOLayoutConstraint.sameSizeWith(transitionView, attached:  destination.view)
             
             tabBarController.addChildViewController(destination)
             destination.didMove(toParentViewController: tabBarController)
+        }
+    }
+    
+    func animateTransition(last: UIView?, new: UIView?) {
+        
+        if let new = new, let last = last {
+            let size = new.bounds.size
+            let transform = new.transform
+            
+            let x = new.tag > last.tag ? size.width : -size.width
+            
+            new.transform = transform.translatedBy(x: x, y: 0)
+            //new.isHidden = false
+            UIView.animate(withDuration: 0.25, animations: {
+                last.transform = transform.translatedBy(x: -x, y: 0)
+                new.transform = .identity
+            }) { (finished) in
+                //print("tranition: \(finished)")
+                last.transform = .identity
+                //last.isHidden = true
+            }
         }
     }
 }

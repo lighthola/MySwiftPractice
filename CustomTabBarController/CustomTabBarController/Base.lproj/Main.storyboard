@@ -31,16 +31,16 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="unselected" value="icon1_unselected"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="selected" value="icon1_selected"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="unselected" value="bow_uns"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="selected" value="bow_s"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VxY-r3-Dzm" customClass="OVOTabBarItem" customModule="CustomTabBarController" customModuleProvider="target">
                                                 <rect key="frame" x="187.5" y="0.0" width="187.5" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="selected" value="icon2_selected"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="unselected" value="icon2_unselected"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="selected" value="hot-air-balloon_s"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="unselected" value="hot-air-balloon_uns"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -170,9 +170,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon1_selected" width="30" height="30"/>
-        <image name="icon1_unselected" width="29" height="29"/>
-        <image name="icon2_selected" width="31" height="31"/>
-        <image name="icon2_unselected" width="30" height="30"/>
+        <image name="bow_s" width="32" height="32"/>
+        <image name="bow_uns" width="16" height="16"/>
+        <image name="hot-air-balloon_s" width="32" height="32"/>
+        <image name="hot-air-balloon_uns" width="16" height="16"/>
     </resources>
 </document>

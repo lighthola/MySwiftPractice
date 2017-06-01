@@ -12,7 +12,6 @@ class ViewController1: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     @IBAction func addItem(_ sender: Any) {
