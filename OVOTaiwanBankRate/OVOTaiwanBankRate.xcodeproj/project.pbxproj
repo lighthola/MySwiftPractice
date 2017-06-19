@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D38D93051EEE6A3500C67CC1 /* TWBRateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D93041EEE6A3500C67CC1 /* TWBRateTableViewCell.swift */; };
+		D38D93071EEE70D600C67CC1 /* TWBRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38D93061EEE70D600C67CC1 /* TWBRate.swift */; };
+		D3B459351EEE819600248CE1 /* TWBPresentRateDetailSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B459341EEE819600248CE1 /* TWBPresentRateDetailSegue.swift */; };
+		D3B459371EEE81D600248CE1 /* TWBRateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B459361EEE81D600248CE1 /* TWBRateDetailViewController.swift */; };
+		D3B459391EEE838A00248CE1 /* OVOGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B459381EEE838A00248CE1 /* OVOGestureRecognizer.swift */; };
+		D3B4593B1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4593A1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift */; };
+		D3B4593D1EF0D96A00248CE1 /* TWBRateDetailHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4593C1EF0D96A00248CE1 /* TWBRateDetailHistoryManager.swift */; };
+		D3D088C31EEE37AE00BA2DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D088C21EEE37AE00BA2DBB /* AppDelegate.swift */; };
+		D3D088C51EEE37AE00BA2DBB /* TWBRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D088C41EEE37AE00BA2DBB /* TWBRateTableViewController.swift */; };
+		D3D088C81EEE37AE00BA2DBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D088C61EEE37AE00BA2DBB /* Main.storyboard */; };
+		D3D088CA1EEE37AE00BA2DBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D088C91EEE37AE00BA2DBB /* Assets.xcassets */; };
+		D3D088CD1EEE37AE00BA2DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D088CB1EEE37AE00BA2DBB /* LaunchScreen.storyboard */; };
+		D3D088D81EEE37AE00BA2DBB /* OVOTaiwanBankRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D088D71EEE37AE00BA2DBB /* OVOTaiwanBankRateTests.swift */; };
+		D3D088E31EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D088E21EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests.swift */; };
+		D92286C6EA911BD382F4E2D6 /* Pods_OVOTaiwanBankRate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA059E4A573649066C1DE08 /* Pods_OVOTaiwanBankRate.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3D088D41EEE37AE00BA2DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3D088B71EEE37AE00BA2DBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3D088BE1EEE37AE00BA2DBB;
+			remoteInfo = OVOTaiwanBankRate;
+		};
+		D3D088DF1EEE37AE00BA2DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D3D088B71EEE37AE00BA2DBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D3D088BE1EEE37AE00BA2DBB;
+			remoteInfo = OVOTaiwanBankRate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A17F743E8D7200A9121D568D /* Pods-OVOTaiwanBankRate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OVOTaiwanBankRate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OVOTaiwanBankRate/Pods-OVOTaiwanBankRate.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA059E4A573649066C1DE08 /* Pods_OVOTaiwanBankRate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OVOTaiwanBankRate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D38D93041EEE6A3500C67CC1 /* TWBRateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWBRateTableViewCell.swift; sourceTree = "<group>"; };
+		D38D93061EEE70D600C67CC1 /* TWBRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWBRate.swift; sourceTree = "<group>"; };
+		D3B459341EEE819600248CE1 /* TWBPresentRateDetailSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWBPresentRateDetailSegue.swift; sourceTree = "<group>"; };
+		D3B459361EEE81D600248CE1 /* TWBRateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWBRateDetailViewController.swift; sourceTree = "<group>"; };
+		D3B459381EEE838A00248CE1 /* OVOGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOGestureRecognizer.swift; sourceTree = "<group>"; };
+		D3B4593A1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWBRateDetailTableViewCell.swift; sourceTree = "<group>"; };
+		D3B4593C1EF0D96A00248CE1 /* TWBRateDetailHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWBRateDetailHistoryManager.swift; sourceTree = "<group>"; };
+		D3D088BF1EEE37AE00BA2DBB /* OVOTaiwanBankRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OVOTaiwanBankRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D088C21EEE37AE00BA2DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D3D088C41EEE37AE00BA2DBB /* TWBRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWBRateTableViewController.swift; sourceTree = "<group>"; };
+		D3D088C71EEE37AE00BA2DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D3D088C91EEE37AE00BA2DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3D088CC1EEE37AE00BA2DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D3D088CE1EEE37AE00BA2DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3D088D31EEE37AE00BA2DBB /* OVOTaiwanBankRateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OVOTaiwanBankRateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D088D71EEE37AE00BA2DBB /* OVOTaiwanBankRateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OVOTaiwanBankRateTests.swift; sourceTree = "<group>"; };
+		D3D088D91EEE37AE00BA2DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3D088DE1EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OVOTaiwanBankRateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D088E21EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OVOTaiwanBankRateUITests.swift; sourceTree = "<group>"; };
+		D3D088E41EEE37AE00BA2DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1F0DEFA8E2FDF39E052D084 /* Pods-OVOTaiwanBankRate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OVOTaiwanBankRate.release.xcconfig"; path = "Pods/Target Support Files/Pods-OVOTaiwanBankRate/Pods-OVOTaiwanBankRate.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D3D088BC1EEE37AE00BA2DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D92286C6EA911BD382F4E2D6 /* Pods_OVOTaiwanBankRate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D088D01EEE37AE00BA2DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D088DB1EEE37AE00BA2DBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		91A70AE3B37E03830AC7F150 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A17F743E8D7200A9121D568D /* Pods-OVOTaiwanBankRate.debug.xcconfig */,
+				E1F0DEFA8E2FDF39E052D084 /* Pods-OVOTaiwanBankRate.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D3D088B61EEE37AE00BA2DBB = {
+			isa = PBXGroup;
+			children = (
+				D3D088C11EEE37AE00BA2DBB /* OVOTaiwanBankRate */,
+				D3D088D61EEE37AE00BA2DBB /* OVOTaiwanBankRateTests */,
+				D3D088E11EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests */,
+				D3D088C01EEE37AE00BA2DBB /* Products */,
+				91A70AE3B37E03830AC7F150 /* Pods */,
+				F5955705121F06EADD1539C3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D3D088C01EEE37AE00BA2DBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D3D088BF1EEE37AE00BA2DBB /* OVOTaiwanBankRate.app */,
+				D3D088D31EEE37AE00BA2DBB /* OVOTaiwanBankRateTests.xctest */,
+				D3D088DE1EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D3D088C11EEE37AE00BA2DBB /* OVOTaiwanBankRate */ = {
+			isa = PBXGroup;
+			children = (
+				D3D088C21EEE37AE00BA2DBB /* AppDelegate.swift */,
+				D3D088C41EEE37AE00BA2DBB /* TWBRateTableViewController.swift */,
+				D38D93041EEE6A3500C67CC1 /* TWBRateTableViewCell.swift */,
+				D38D93061EEE70D600C67CC1 /* TWBRate.swift */,
+				D3B459341EEE819600248CE1 /* TWBPresentRateDetailSegue.swift */,
+				D3B459361EEE81D600248CE1 /* TWBRateDetailViewController.swift */,
+				D3B4593C1EF0D96A00248CE1 /* TWBRateDetailHistoryManager.swift */,
+				D3B4593A1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift */,
+				D3B459381EEE838A00248CE1 /* OVOGestureRecognizer.swift */,
+				D3D088C61EEE37AE00BA2DBB /* Main.storyboard */,
+				D3D088C91EEE37AE00BA2DBB /* Assets.xcassets */,
+				D3D088CB1EEE37AE00BA2DBB /* LaunchScreen.storyboard */,
+				D3D088CE1EEE37AE00BA2DBB /* Info.plist */,
+			);
+			path = OVOTaiwanBankRate;
+			sourceTree = "<group>";
+		};
+		D3D088D61EEE37AE00BA2DBB /* OVOTaiwanBankRateTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3D088D71EEE37AE00BA2DBB /* OVOTaiwanBankRateTests.swift */,
+				D3D088D91EEE37AE00BA2DBB /* Info.plist */,
+			);
+			path = OVOTaiwanBankRateTests;
+			sourceTree = "<group>";
+		};
+		D3D088E11EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D3D088E21EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests.swift */,
+				D3D088E41EEE37AE00BA2DBB /* Info.plist */,
+			);
+			path = OVOTaiwanBankRateUITests;
+			sourceTree = "<group>";
+		};
+		F5955705121F06EADD1539C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDA059E4A573649066C1DE08 /* Pods_OVOTaiwanBankRate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D3D088BE1EEE37AE00BA2DBB /* OVOTaiwanBankRate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3D088E71EEE37AE00BA2DBB /* Build configuration list for PBXNativeTarget "OVOTaiwanBankRate" */;
+			buildPhases = (
+				8F8C9BD9BAB28334627976A2 /* [CP] Check Pods Manifest.lock */,
+				D3D088BB1EEE37AE00BA2DBB /* Sources */,
+				D3D088BC1EEE37AE00BA2DBB /* Frameworks */,
+				D3D088BD1EEE37AE00BA2DBB /* Resources */,
+				299280264E088D2629ABAE96 /* [CP] Embed Pods Frameworks */,
+				F20A81AECCB1D237200B95DE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OVOTaiwanBankRate;
+			productName = OVOTaiwanBankRate;
+			productReference = D3D088BF1EEE37AE00BA2DBB /* OVOTaiwanBankRate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D3D088D21EEE37AE00BA2DBB /* OVOTaiwanBankRateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3D088EA1EEE37AE00BA2DBB /* Build configuration list for PBXNativeTarget "OVOTaiwanBankRateTests" */;
+			buildPhases = (
+				D3D088CF1EEE37AE00BA2DBB /* Sources */,
+				D3D088D01EEE37AE00BA2DBB /* Frameworks */,
+				D3D088D11EEE37AE00BA2DBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3D088D51EEE37AE00BA2DBB /* PBXTargetDependency */,
+			);
+			name = OVOTaiwanBankRateTests;
+			productName = OVOTaiwanBankRateTests;
+			productReference = D3D088D31EEE37AE00BA2DBB /* OVOTaiwanBankRateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D3D088DD1EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3D088ED1EEE37AE00BA2DBB /* Build configuration list for PBXNativeTarget "OVOTaiwanBankRateUITests" */;
+			buildPhases = (
+				D3D088DA1EEE37AE00BA2DBB /* Sources */,
+				D3D088DB1EEE37AE00BA2DBB /* Frameworks */,
+				D3D088DC1EEE37AE00BA2DBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3D088E01EEE37AE00BA2DBB /* PBXTargetDependency */,
+			);
+			name = OVOTaiwanBankRateUITests;
+			productName = OVOTaiwanBankRateUITests;
+			productReference = D3D088DE1EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D3D088B71EEE37AE00BA2DBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Bevis Chen";
+				TargetAttributes = {
+					D3D088BE1EEE37AE00BA2DBB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N4B8NP363E;
+						ProvisioningStyle = Automatic;
+					};
+					D3D088D21EEE37AE00BA2DBB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N4B8NP363E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D3D088BE1EEE37AE00BA2DBB;
+					};
+					D3D088DD1EEE37AE00BA2DBB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N4B8NP363E;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D3D088BE1EEE37AE00BA2DBB;
+					};
+				};
+			};
+			buildConfigurationList = D3D088BA1EEE37AE00BA2DBB /* Build configuration list for PBXProject "OVOTaiwanBankRate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D3D088B61EEE37AE00BA2DBB;
+			productRefGroup = D3D088C01EEE37AE00BA2DBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D3D088BE1EEE37AE00BA2DBB /* OVOTaiwanBankRate */,
+				D3D088D21EEE37AE00BA2DBB /* OVOTaiwanBankRateTests */,
+				D3D088DD1EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D3D088BD1EEE37AE00BA2DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D088CD1EEE37AE00BA2DBB /* LaunchScreen.storyboard in Resources */,
+				D3D088CA1EEE37AE00BA2DBB /* Assets.xcassets in Resources */,
+				D3D088C81EEE37AE00BA2DBB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D088D11EEE37AE00BA2DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D088DC1EEE37AE00BA2DBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		299280264E088D2629ABAE96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OVOTaiwanBankRate/Pods-OVOTaiwanBankRate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F8C9BD9BAB28334627976A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F20A81AECCB1D237200B95DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OVOTaiwanBankRate/Pods-OVOTaiwanBankRate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D3D088BB1EEE37AE00BA2DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3B4593D1EF0D96A00248CE1 /* TWBRateDetailHistoryManager.swift in Sources */,
+				D3B459371EEE81D600248CE1 /* TWBRateDetailViewController.swift in Sources */,
+				D38D93051EEE6A3500C67CC1 /* TWBRateTableViewCell.swift in Sources */,
+				D3B459351EEE819600248CE1 /* TWBPresentRateDetailSegue.swift in Sources */,
+				D38D93071EEE70D600C67CC1 /* TWBRate.swift in Sources */,
+				D3B4593B1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift in Sources */,
+				D3D088C51EEE37AE00BA2DBB /* TWBRateTableViewController.swift in Sources */,
+				D3D088C31EEE37AE00BA2DBB /* AppDelegate.swift in Sources */,
+				D3B459391EEE838A00248CE1 /* OVOGestureRecognizer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D088CF1EEE37AE00BA2DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D088D81EEE37AE00BA2DBB /* OVOTaiwanBankRateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D088DA1EEE37AE00BA2DBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D088E31EEE37AE00BA2DBB /* OVOTaiwanBankRateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D3D088D51EEE37AE00BA2DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3D088BE1EEE37AE00BA2DBB /* OVOTaiwanBankRate */;
+			targetProxy = D3D088D41EEE37AE00BA2DBB /* PBXContainerItemProxy */;
+		};
+		D3D088E01EEE37AE00BA2DBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D3D088BE1EEE37AE00BA2DBB /* OVOTaiwanBankRate */;
+			targetProxy = D3D088DF1EEE37AE00BA2DBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D3D088C61EEE37AE00BA2DBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3D088C71EEE37AE00BA2DBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D3D088CB1EEE37AE00BA2DBB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3D088CC1EEE37AE00BA2DBB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D3D088E51EEE37AE00BA2DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D3D088E61EEE37AE00BA2DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D3D088E81EEE37AE00BA2DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A17F743E8D7200A9121D568D /* Pods-OVOTaiwanBankRate.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N4B8NP363E;
+				INFOPLIST_FILE = OVOTaiwanBankRate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.OVOTaiwanBankRate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D3D088E91EEE37AE00BA2DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1F0DEFA8E2FDF39E052D084 /* Pods-OVOTaiwanBankRate.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N4B8NP363E;
+				INFOPLIST_FILE = OVOTaiwanBankRate/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.OVOTaiwanBankRate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D3D088EB1EEE37AE00BA2DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N4B8NP363E;
+				INFOPLIST_FILE = OVOTaiwanBankRateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.OVOTaiwanBankRateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OVOTaiwanBankRate.app/OVOTaiwanBankRate";
+			};
+			name = Debug;
+		};
+		D3D088EC1EEE37AE00BA2DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = N4B8NP363E;
+				INFOPLIST_FILE = OVOTaiwanBankRateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.OVOTaiwanBankRateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OVOTaiwanBankRate.app/OVOTaiwanBankRate";
+			};
+			name = Release;
+		};
+		D3D088EE1EEE37AE00BA2DBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = N4B8NP363E;
+				INFOPLIST_FILE = OVOTaiwanBankRateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.OVOTaiwanBankRateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OVOTaiwanBankRate;
+			};
+			name = Debug;
+		};
+		D3D088EF1EEE37AE00BA2DBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = N4B8NP363E;
+				INFOPLIST_FILE = OVOTaiwanBankRateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.OVOTaiwanBankRateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = OVOTaiwanBankRate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D3D088BA1EEE37AE00BA2DBB /* Build configuration list for PBXProject "OVOTaiwanBankRate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D088E51EEE37AE00BA2DBB /* Debug */,
+				D3D088E61EEE37AE00BA2DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3D088E71EEE37AE00BA2DBB /* Build configuration list for PBXNativeTarget "OVOTaiwanBankRate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D088E81EEE37AE00BA2DBB /* Debug */,
+				D3D088E91EEE37AE00BA2DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3D088EA1EEE37AE00BA2DBB /* Build configuration list for PBXNativeTarget "OVOTaiwanBankRateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D088EB1EEE37AE00BA2DBB /* Debug */,
+				D3D088EC1EEE37AE00BA2DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3D088ED1EEE37AE00BA2DBB /* Build configuration list for PBXNativeTarget "OVOTaiwanBankRateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D088EE1EEE37AE00BA2DBB /* Debug */,
+				D3D088EF1EEE37AE00BA2DBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D3D088B71EEE37AE00BA2DBB /* Project object */;
+}

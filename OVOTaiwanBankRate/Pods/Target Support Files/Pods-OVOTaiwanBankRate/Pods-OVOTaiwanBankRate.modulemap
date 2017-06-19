@@ -1,0 +1,6 @@
+framework module Pods_OVOTaiwanBankRate {
+  umbrella header "Pods-OVOTaiwanBankRate-umbrella.h"
+
+  export *
+  module * { export * }
+}
