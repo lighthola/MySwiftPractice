@@ -76,6 +76,8 @@ class TWBRateDetailViewController: UIViewController {
         
         historysManager = TWBRateDetailHistorysManager(key: currency!)
         historys.append(contentsOf: historysManager!.historys)
+        
+        
     }
     
     deinit {

@@ -33,14 +33,6 @@ class TWBRateViewController: UIViewController {
         rate.get() { rates in
             self.rates = rates
         }
-        
-        let images = [
-            53219:  UIImage(named:"White Glyph 2"),
-            59317:  UIImage(named:"White Glyph 3"),
-            17068: UIImage(named:"White Glyph 4")
-        ]
-        let imageView = UIImageView()
-        imageView.image = images[53219]!
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -92,8 +84,11 @@ extension TWBRateViewController: UITableViewDataSource {
 
 extension TWBRateViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        print(indexPath.row)
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
 

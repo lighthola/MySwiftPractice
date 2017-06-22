@@ -14,6 +14,7 @@
 		D3B459391EEE838A00248CE1 /* OVOGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B459381EEE838A00248CE1 /* OVOGestureRecognizer.swift */; };
 		D3B4593B1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4593A1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift */; };
 		D3B4593D1EF0D96A00248CE1 /* TWBRateDetailHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B4593C1EF0D96A00248CE1 /* TWBRateDetailHistoryManager.swift */; };
+		D3B459831EF9000000248CE1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B459821EF9000000248CE1 /* Reachability.m */; };
 		D3D088C31EEE37AE00BA2DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D088C21EEE37AE00BA2DBB /* AppDelegate.swift */; };
 		D3D088C51EEE37AE00BA2DBB /* TWBRateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D088C41EEE37AE00BA2DBB /* TWBRateTableViewController.swift */; };
 		D3D088C81EEE37AE00BA2DBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D088C61EEE37AE00BA2DBB /* Main.storyboard */; };
@@ -51,6 +52,9 @@
 		D3B459381EEE838A00248CE1 /* OVOGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OVOGestureRecognizer.swift; sourceTree = "<group>"; };
 		D3B4593A1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWBRateDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D3B4593C1EF0D96A00248CE1 /* TWBRateDetailHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWBRateDetailHistoryManager.swift; sourceTree = "<group>"; };
+		D3B459801EF9000000248CE1 /* OVOTaiwanBankRate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVOTaiwanBankRate-Bridging-Header.h"; sourceTree = "<group>"; };
+		D3B459811EF9000000248CE1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D3B459821EF9000000248CE1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		D3D088BF1EEE37AE00BA2DBB /* OVOTaiwanBankRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OVOTaiwanBankRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D088C21EEE37AE00BA2DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D088C41EEE37AE00BA2DBB /* TWBRateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWBRateTableViewController.swift; sourceTree = "<group>"; };
@@ -137,9 +141,12 @@
 				D3B4593A1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift */,
 				D3B459381EEE838A00248CE1 /* OVOGestureRecognizer.swift */,
 				D3D088C61EEE37AE00BA2DBB /* Main.storyboard */,
+				D3B459811EF9000000248CE1 /* Reachability.h */,
+				D3B459821EF9000000248CE1 /* Reachability.m */,
 				D3D088C91EEE37AE00BA2DBB /* Assets.xcassets */,
 				D3D088CB1EEE37AE00BA2DBB /* LaunchScreen.storyboard */,
 				D3D088CE1EEE37AE00BA2DBB /* Info.plist */,
+				D3B459801EF9000000248CE1 /* OVOTaiwanBankRate-Bridging-Header.h */,
 			);
 			path = OVOTaiwanBankRate;
 			sourceTree = "<group>";
@@ -242,6 +249,7 @@
 					D3D088BE1EEE37AE00BA2DBB = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = N4B8NP363E;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					D3D088D21EEE37AE00BA2DBB = {
@@ -362,6 +370,7 @@
 				D3B459371EEE81D600248CE1 /* TWBRateDetailViewController.swift in Sources */,
 				D38D93051EEE6A3500C67CC1 /* TWBRateTableViewCell.swift in Sources */,
 				D3B459351EEE819600248CE1 /* TWBPresentRateDetailSegue.swift in Sources */,
+				D3B459831EF9000000248CE1 /* Reachability.m in Sources */,
 				D38D93071EEE70D600C67CC1 /* TWBRate.swift in Sources */,
 				D3B4593B1EEF8A9700248CE1 /* TWBRateDetailTableViewCell.swift in Sources */,
 				D3D088C51EEE37AE00BA2DBB /* TWBRateTableViewController.swift in Sources */,
@@ -521,11 +530,14 @@
 			baseConfigurationReference = A17F743E8D7200A9121D568D /* Pods-OVOTaiwanBankRate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = N4B8NP363E;
 				INFOPLIST_FILE = OVOTaiwanBankRate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.OVOTaiwanBankRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OVOTaiwanBankRate/OVOTaiwanBankRate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -535,11 +547,13 @@
 			baseConfigurationReference = E1F0DEFA8E2FDF39E052D084 /* Pods-OVOTaiwanBankRate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = N4B8NP363E;
 				INFOPLIST_FILE = OVOTaiwanBankRate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.OVOTaiwanBankRate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OVOTaiwanBankRate/OVOTaiwanBankRate-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

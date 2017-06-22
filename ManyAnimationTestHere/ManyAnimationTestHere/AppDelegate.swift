@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  Charts
+//  ManyAnimationTestHere
 //
-//  Created by Bevis Chen on 2016/12/5.
-//  Copyright © 2016年 Bevis Chen. All rights reserved.
+//  Created by Bevis Chen on 2017/6/22.
+//  Copyright © 2017年 Bevis Chen. All rights reserved.
 //
 
 import UIKit

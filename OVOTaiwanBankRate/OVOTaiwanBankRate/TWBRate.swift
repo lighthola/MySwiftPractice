@@ -21,6 +21,7 @@ class TWBRateNetwork {
     private let multiCountry = "xrt/flcsv/0/day"
     
     func get(_ multiCountryRates:@escaping (_ rates:[TWBRate])->()) {
+        
         Alamofire.request(baseSite + multiCountry).response { (response) in
             //print(response)
             //print(response.data!)

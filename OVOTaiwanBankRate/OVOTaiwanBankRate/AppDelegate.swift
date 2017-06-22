@@ -7,15 +7,53 @@
 //
 
 import UIKit
+import CoreTelephony
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let reachability = Reachability.forInternetConnection() {
+            reachability.startNotifier()
+            let status = reachability.currentReachabilityStatus()
+            if status == .init(0) {
+                // .NotReachable
+                print("Not Reachable")
+            }
+            else if status == .init(1) {
+                // .ReachableViaWiFi
+                print("Reachable Via WiFi")
+                
+            }
+            else if status == .init(2) {
+                // .ReachableViaWWAN
+                let netInfo = CTTelephonyNetworkInfo()
+                if let cRAT = netInfo.currentRadioAccessTechnology  {
+                    switch cRAT {
+                    case CTRadioAccessTechnologyGPRS,
+                         CTRadioAccessTechnologyEdge,
+                         CTRadioAccessTechnologyCDMA1x:
+                        print("Reachable Via 2G")
+                    case CTRadioAccessTechnologyWCDMA,
+                         CTRadioAccessTechnologyHSDPA,
+                         CTRadioAccessTechnologyHSUPA,
+                         CTRadioAccessTechnologyCDMAEVDORev0,
+                         CTRadioAccessTechnologyCDMAEVDORevA,
+                         CTRadioAccessTechnologyCDMAEVDORevB,
+                         CTRadioAccessTechnologyeHRPD:
+                        print("Reachable Via 3G")
+                    case CTRadioAccessTechnologyLTE:
+                        print("Reachable Via 4G")
+                    default:
+                        fatalError("error")
+                    }
+                }
+            }
+        }
+        
         return true
     }
 
