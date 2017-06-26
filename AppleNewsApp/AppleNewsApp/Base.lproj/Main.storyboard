@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AppleNewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KVP-At-ZIy">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="cvL-i7-mjs" customClass="AppleNewsFlowLayout" customModule="AppleNewsApp" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell_big" id="oti-ud-gyA" customClass="NewsCell" customModule="AppleNewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="69" y="0.0" width="237" height="270"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="237" height="270"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time_logo" translatesAutoresizingMaskIntoConstraints="NO" id="HzJ-wl-vpn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="237" height="178"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="HzJ-wl-vpn" secondAttribute="height" multiplier="4:3" id="6Il-nb-PT6"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ynn-xI-UgL">
+                                                    <rect key="frame" x="0.0" y="182" width="56.5" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="Fdu-Vn-uXt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 billion gallons of water pour into Lake Tahoe amid this week's hear wave" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkI-5n-2Lr">
+                                                    <rect key="frame" x="0.0" y="216" width="237" height="54"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="HzJ-wl-vpn" secondAttribute="trailing" id="9Hk-xU-GWH"/>
+                                            <constraint firstItem="HzJ-wl-vpn" firstAttribute="leading" secondItem="oti-ud-gyA" secondAttribute="leading" id="AiC-EY-DBH"/>
+                                            <constraint firstItem="KkI-5n-2Lr" firstAttribute="leading" secondItem="oti-ud-gyA" secondAttribute="leading" id="Q29-tM-28v"/>
+                                            <constraint firstItem="KkI-5n-2Lr" firstAttribute="top" secondItem="Ynn-xI-UgL" secondAttribute="bottom" constant="4" id="Ws6-g0-eIv"/>
+                                            <constraint firstItem="Ynn-xI-UgL" firstAttribute="top" secondItem="HzJ-wl-vpn" secondAttribute="bottom" constant="4" id="c2h-it-mjB"/>
+                                            <constraint firstItem="HzJ-wl-vpn" firstAttribute="top" secondItem="oti-ud-gyA" secondAttribute="top" id="f1l-i9-7RF"/>
+                                            <constraint firstAttribute="trailing" secondItem="KkI-5n-2Lr" secondAttribute="trailing" id="hgK-AK-pIf"/>
+                                            <constraint firstItem="Ynn-xI-UgL" firstAttribute="leading" secondItem="oti-ud-gyA" secondAttribute="leading" id="lfi-Mp-gLQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="KkI-5n-2Lr" secondAttribute="bottom" id="vHX-kg-MLx"/>
+                                        </constraints>
+                                        <size key="customSize" width="237" height="270"/>
+                                        <connections>
+                                            <outlet property="image" destination="HzJ-wl-vpn" id="iTx-AF-9zO"/>
+                                            <outlet property="provider" destination="Ynn-xI-UgL" id="Pke-Bn-qex"/>
+                                            <outlet property="title" destination="KkI-5n-2Lr" id="goc-oG-WoA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell_h" id="Nbe-tf-7ZR" customClass="NewsCell" customModule="AppleNewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="280" width="375" height="125"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zJx-O7-eYs">
+                                                    <rect key="frame" x="250" y="0.0" width="125" height="125"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="zJx-O7-eYs" secondAttribute="height" multiplier="1:1" id="0Yo-TC-flE"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y82-IA-Hwc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="hXa-fH-U2q"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 billion gallons of water pour into Lake Tahoe amid this week's hear wave" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nM-GD-JJe">
+                                                    <rect key="frame" x="0.0" y="34" width="250" height="91"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="y82-IA-Hwc" firstAttribute="leading" secondItem="Nbe-tf-7ZR" secondAttribute="leading" id="40i-aU-brR"/>
+                                            <constraint firstItem="zJx-O7-eYs" firstAttribute="leading" secondItem="y82-IA-Hwc" secondAttribute="trailing" id="BBw-Nm-y0G"/>
+                                            <constraint firstItem="6nM-GD-JJe" firstAttribute="top" secondItem="y82-IA-Hwc" secondAttribute="bottom" constant="4" id="BJt-kW-uvb"/>
+                                            <constraint firstItem="y82-IA-Hwc" firstAttribute="top" secondItem="Nbe-tf-7ZR" secondAttribute="top" id="D4h-L1-zR8"/>
+                                            <constraint firstAttribute="trailing" secondItem="zJx-O7-eYs" secondAttribute="trailing" id="XBv-U7-nUG"/>
+                                            <constraint firstAttribute="bottom" secondItem="6nM-GD-JJe" secondAttribute="bottom" id="mJb-ah-gby"/>
+                                            <constraint firstItem="zJx-O7-eYs" firstAttribute="top" secondItem="Nbe-tf-7ZR" secondAttribute="top" id="oWT-ax-SRW"/>
+                                            <constraint firstItem="6nM-GD-JJe" firstAttribute="leading" secondItem="Nbe-tf-7ZR" secondAttribute="leading" id="pfp-x5-vlg"/>
+                                            <constraint firstItem="zJx-O7-eYs" firstAttribute="leading" secondItem="6nM-GD-JJe" secondAttribute="trailing" id="vMe-fr-nBd"/>
+                                            <constraint firstAttribute="bottom" secondItem="zJx-O7-eYs" secondAttribute="bottom" id="yEF-Js-OeV"/>
+                                        </constraints>
+                                        <size key="customSize" width="375" height="125"/>
+                                        <connections>
+                                            <outlet property="image" destination="zJx-O7-eYs" id="ohp-zi-rGK"/>
+                                            <outlet property="provider" destination="y82-IA-Hwc" id="CoB-Pz-qTz"/>
+                                            <outlet property="title" destination="6nM-GD-JJe" id="un0-Nd-TdI"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell_v" id="dFa-Xu-HOQ" customClass="NewsCell" customModule="AppleNewsApp" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="415" width="165" height="242"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="165" height="242"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wzs-Pn-svQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="124"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="wzs-Pn-svQ" secondAttribute="height" multiplier="4:3" id="OVt-6S-o23"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2LM-q1-gQs">
+                                                    <rect key="frame" x="0.0" y="128" width="46" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="TJ3-ZE-aIG"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 billion gallons of water pour into Lake Tahoe amid this week's hear wave" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1g-c2-hNl">
+                                                    <rect key="frame" x="0.0" y="162" width="165" height="80"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="2LM-q1-gQs" firstAttribute="leading" secondItem="dFa-Xu-HOQ" secondAttribute="leading" id="4tb-h0-G0j"/>
+                                            <constraint firstAttribute="bottom" secondItem="V1g-c2-hNl" secondAttribute="bottom" id="DbM-4z-Kvd"/>
+                                            <constraint firstItem="wzs-Pn-svQ" firstAttribute="leading" secondItem="dFa-Xu-HOQ" secondAttribute="leading" id="E5P-GL-Wkj"/>
+                                            <constraint firstAttribute="trailing" secondItem="wzs-Pn-svQ" secondAttribute="trailing" id="Mmt-jL-ymu"/>
+                                            <constraint firstItem="2LM-q1-gQs" firstAttribute="top" secondItem="wzs-Pn-svQ" secondAttribute="bottom" constant="4" id="ODS-wx-NYW"/>
+                                            <constraint firstItem="V1g-c2-hNl" firstAttribute="top" secondItem="2LM-q1-gQs" secondAttribute="bottom" constant="4" id="W9e-lJ-7vi"/>
+                                            <constraint firstItem="V1g-c2-hNl" firstAttribute="leading" secondItem="dFa-Xu-HOQ" secondAttribute="leading" id="ayd-Pt-jLG"/>
+                                            <constraint firstItem="wzs-Pn-svQ" firstAttribute="top" secondItem="dFa-Xu-HOQ" secondAttribute="top" id="guy-yD-idH"/>
+                                            <constraint firstAttribute="trailing" secondItem="V1g-c2-hNl" secondAttribute="trailing" id="pcq-dH-cX8"/>
+                                        </constraints>
+                                        <size key="customSize" width="165" height="242"/>
+                                        <connections>
+                                            <outlet property="image" destination="wzs-Pn-svQ" id="bFe-bY-0fr"/>
+                                            <outlet property="provider" destination="2LM-q1-gQs" id="Pe9-dd-vrY"/>
+                                            <outlet property="title" destination="V1g-c2-hNl" id="F0V-Ew-2LW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Jlz-K7-7tJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ijW-0H-X1n"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KVP-At-ZIy" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="GvG-na-TVA"/>
+                            <constraint firstItem="KVP-At-ZIy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fJ1-3p-Cwb"/>
+                            <constraint firstAttribute="trailing" secondItem="KVP-At-ZIy" secondAttribute="trailing" id="l4H-Zp-sU3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KVP-At-ZIy" secondAttribute="bottom" id="ps6-F3-aEf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="KVP-At-ZIy" id="U0U-gZ-LW9"/>
+                        <outlet property="flowLayout" destination="cvL-i7-mjs" id="q1s-zZ-DDT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="time_logo" width="200" height="63"/>
+    </resources>
+</document>

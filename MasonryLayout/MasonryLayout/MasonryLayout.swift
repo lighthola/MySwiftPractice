@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol MasonryLayoutDelegate
+protocol MasonryLayoutDelegate: class
 {
     func masonryLayout(_ masonryLaout: MasonryLayout, cellHeightForItemAt indexPath: IndexPath) -> CGFloat
 }
@@ -19,7 +19,7 @@ class MasonryLayout: UICollectionViewFlowLayout
     
     
     // MARK:- Variable
-    var delegate: MasonryLayoutDelegate?
+    weak var delegate: MasonryLayoutDelegate?
     var maxColumns = 1
     var itemWidth: CGFloat = 0
     fileprivate var attributesArray: [UICollectionViewLayoutAttributes]?
