@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreImageTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="XjR-0B-jkf">
+                                <rect key="frame" x="0.0" y="20" width="500.5" height="355"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esw-Re-fnl">
+                                <rect key="frame" x="580" y="225.5" width="51" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dAl-fg-I4I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqa-IW-Oh8">
+                                <rect key="frame" x="588" y="169.5" width="36" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Part"/>
+                                <connections>
+                                    <action selector="pixelPartBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d1s-Ng-9gG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4o-cZ-pjD">
+                                <rect key="frame" x="590" y="113.5" width="32" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Full"/>
+                                <connections>
+                                    <action selector="pixelFullBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPM-5v-pyf"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="xeD-po-WEb">
+                                <rect key="frame" x="501" y="75.5" width="148" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="144" id="8mT-hR-kS0"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="inputCenterChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="bOv-Ae-X5r"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xeD-po-WEb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1Ii-sE-V5S"/>
+                            <constraint firstItem="oqa-IW-Oh8" firstAttribute="centerX" secondItem="Esw-Re-fnl" secondAttribute="centerX" id="AZi-Yk-KN5"/>
+                            <constraint firstItem="oqa-IW-Oh8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="G6e-SE-qDN"/>
+                            <constraint firstItem="XjR-0B-jkf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kj2-WK-hzQ"/>
+                            <constraint firstItem="XjR-0B-jkf" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="3/4" id="WjX-ZF-RKf"/>
+                            <constraint firstItem="B4o-cZ-pjD" firstAttribute="centerX" secondItem="oqa-IW-Oh8" secondAttribute="centerX" id="YX9-uN-m4X"/>
+                            <constraint firstItem="Esw-Re-fnl" firstAttribute="top" secondItem="oqa-IW-Oh8" secondAttribute="bottom" constant="20" id="bff-5c-JwN"/>
+                            <constraint firstItem="oqa-IW-Oh8" firstAttribute="top" secondItem="B4o-cZ-pjD" secondAttribute="bottom" constant="20" id="fCD-FL-l05"/>
+                            <constraint firstItem="B4o-cZ-pjD" firstAttribute="top" secondItem="xeD-po-WEb" secondAttribute="bottom" constant="8" id="iCD-94-4S4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Esw-Re-fnl" secondAttribute="trailing" constant="16" id="oIE-3a-G0c"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="XjR-0B-jkf" secondAttribute="bottom" id="pd8-dq-0XG"/>
+                            <constraint firstItem="XjR-0B-jkf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="woE-16-R4m"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="XjR-0B-jkf" id="e9A-zM-8re"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25.637181409295355" y="23.199999999999999"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image" width="720" height="507"/>
+    </resources>
+</document>
