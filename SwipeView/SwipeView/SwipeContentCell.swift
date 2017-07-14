@@ -48,7 +48,6 @@ class SwipeContentCell: UICollectionViewCell {
         shadow.locations = [0.05, 0.5, 0.75, 1]
         shadow.startPoint = CGPoint(x: 0, y: 0.5)
         shadow.endPoint = CGPoint(x: 1, y: 0.5)
-        //self.layer.insertSublayer(shadow, at: 0)
         return shadow
     }()
     
@@ -61,7 +60,6 @@ class SwipeContentCell: UICollectionViewCell {
         shadow.locations = [0.25, 0.5, 0.75, 1]
         shadow.startPoint = CGPoint(x: 1, y: 0.5)
         shadow.endPoint = CGPoint(x: 0, y: 0.5)
-        //self.layer.insertSublayer(shadow, at: 0)
         return shadow
     }()
     

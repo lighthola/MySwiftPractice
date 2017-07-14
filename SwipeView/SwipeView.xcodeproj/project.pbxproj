@@ -15,11 +15,6 @@
 		D3526B5E1F0CC66D005E7962 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3526B5C1F0CC66D005E7962 /* LaunchScreen.storyboard */; };
 		D3526B691F0CC66D005E7962 /* SwipeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3526B681F0CC66D005E7962 /* SwipeViewTests.swift */; };
 		D3526B741F0CC66D005E7962 /* SwipeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3526B731F0CC66D005E7962 /* SwipeViewUITests.swift */; };
-		D3526B821F0CC96E005E7962 /* SwipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3526B811F0CC96E005E7962 /* SwipeTabView.swift */; };
-		D3526B841F0CC97A005E7962 /* SwipeTabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3526B831F0CC97A005E7962 /* SwipeTabView.xib */; };
-		D3526B871F0CDA57005E7962 /* SwipeTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3526B851F0CDA57005E7962 /* SwipeTabItem.swift */; };
-		D3526B881F0CDA57005E7962 /* SwipeTabItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3526B861F0CDA57005E7962 /* SwipeTabItem.xib */; };
-		D3526B8A1F0CE900005E7962 /* SwipeTabFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3526B891F0CE900005E7962 /* SwipeTabFlowLayout.swift */; };
 		D3BCEDD71F134DB7003AF3A8 /* SwipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BCEDD61F134DB7003AF3A8 /* SwipeItem.swift */; };
 		D3BCEDD91F134DF3003AF3A8 /* SwipeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3BCEDD81F134DF3003AF3A8 /* SwipeItem.xib */; };
 		D3BCEDDB1F1364AB003AF3A8 /* SwipeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BCEDDA1F1364AB003AF3A8 /* SwipeTabBar.swift */; };
@@ -60,11 +55,6 @@
 		D3526B6F1F0CC66D005E7962 /* SwipeViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwipeViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3526B731F0CC66D005E7962 /* SwipeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewUITests.swift; sourceTree = "<group>"; };
 		D3526B751F0CC66D005E7962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D3526B811F0CC96E005E7962 /* SwipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTabView.swift; sourceTree = "<group>"; };
-		D3526B831F0CC97A005E7962 /* SwipeTabView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeTabView.xib; sourceTree = "<group>"; };
-		D3526B851F0CDA57005E7962 /* SwipeTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTabItem.swift; sourceTree = "<group>"; };
-		D3526B861F0CDA57005E7962 /* SwipeTabItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeTabItem.xib; sourceTree = "<group>"; };
-		D3526B891F0CE900005E7962 /* SwipeTabFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTabFlowLayout.swift; sourceTree = "<group>"; };
 		D3BCEDD61F134DB7003AF3A8 /* SwipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeItem.swift; sourceTree = "<group>"; };
 		D3BCEDD81F134DF3003AF3A8 /* SwipeItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeItem.xib; sourceTree = "<group>"; };
 		D3BCEDDA1F1364AB003AF3A8 /* SwipeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTabBar.swift; sourceTree = "<group>"; };
@@ -129,13 +119,8 @@
 				D3BCEDDC1F14A70B003AF3A8 /* SwipeTabBarControllerViewController.swift */,
 				D3BCEDDE1F162503003AF3A8 /* SwipeContentCell.swift */,
 				D3BCEDDF1F162503003AF3A8 /* SwipeContentCell.xib */,
-				D3526B551F0CC66C005E7962 /* ViewController.swift */,
 				D3526B571F0CC66D005E7962 /* Main.storyboard */,
-				D3526B811F0CC96E005E7962 /* SwipeTabView.swift */,
-				D3526B891F0CE900005E7962 /* SwipeTabFlowLayout.swift */,
-				D3526B831F0CC97A005E7962 /* SwipeTabView.xib */,
-				D3526B851F0CDA57005E7962 /* SwipeTabItem.swift */,
-				D3526B861F0CDA57005E7962 /* SwipeTabItem.xib */,
+				D3526B551F0CC66C005E7962 /* ViewController.swift */,
 				D3526B5A1F0CC66D005E7962 /* Assets.xcassets */,
 				D3526B5C1F0CC66D005E7962 /* LaunchScreen.storyboard */,
 				D3526B5F1F0CC66D005E7962 /* Info.plist */,
@@ -265,12 +250,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3526B841F0CC97A005E7962 /* SwipeTabView.xib in Resources */,
 				D3526B5E1F0CC66D005E7962 /* LaunchScreen.storyboard in Resources */,
 				D3526B5B1F0CC66D005E7962 /* Assets.xcassets in Resources */,
 				D3BCEDD91F134DF3003AF3A8 /* SwipeItem.xib in Resources */,
 				D3BCEDE11F162503003AF3A8 /* SwipeContentCell.xib in Resources */,
-				D3526B881F0CDA57005E7962 /* SwipeTabItem.xib in Resources */,
 				D3526B591F0CC66D005E7962 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,9 +284,6 @@
 				D3526B541F0CC66C005E7962 /* AppDelegate.swift in Sources */,
 				D3BCEDDB1F1364AB003AF3A8 /* SwipeTabBar.swift in Sources */,
 				D3BCEDDD1F14A70B003AF3A8 /* SwipeTabBarControllerViewController.swift in Sources */,
-				D3526B821F0CC96E005E7962 /* SwipeTabView.swift in Sources */,
-				D3526B871F0CDA57005E7962 /* SwipeTabItem.swift in Sources */,
-				D3526B8A1F0CE900005E7962 /* SwipeTabFlowLayout.swift in Sources */,
 				D3BCEDD71F134DB7003AF3A8 /* SwipeItem.swift in Sources */,
 				D3BCEDE01F162503003AF3A8 /* SwipeContentCell.swift in Sources */,
 			);

@@ -17,6 +17,17 @@ class SwipeItem: UIView {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: StrokeLabel!
+    @IBOutlet weak var leftArrowImageView: UIImageView! {
+        didSet {
+            leftArrowImageView.alpha = 0
+            leftArrowImageView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        }
+    }
+    @IBOutlet weak var rightArrowImageView: UIImageView! {
+        didSet {
+            rightArrowImageView.alpha = 0
+        }
+    }
     
     
     weak var constraintWidth: NSLayoutConstraint?

@@ -17,12 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //let itemTuples = (0...4).map{ _ in (UIViewController(), UIImage(named: "fire")!, "fire") }
-        let itemTuples = [(UIViewController(),UIImage(named: "flame")!,"flame"),(UIViewController(),UIImage(named: "forest")!,"forest"),(UIViewController(),UIImage(named: "gasoline-pump")!,"pump"),(UIViewController(),UIImage(named: "leaf")!,"leaf"),(UIViewController(),UIImage(named: "physics")!,"physics")]
+        let itemTuples = [(UIViewController(),UIImage(named: "flame")!,"flame"),(UIViewController(),UIImage(named: "forest")!,"forest"),(UIViewController(),UIImage(named: "gasoline-pump")!,"gasoline-pump"),(UIViewController(),UIImage(named: "leaf")!,"leaf"),(UIViewController(),UIImage(named: "physics")!,"physics")]
         let rootVC = SwipeTabBarControllerViewController(itemTuples: itemTuples, selectedIndex: 3)
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
-        
-        
+
         return true
     }
 

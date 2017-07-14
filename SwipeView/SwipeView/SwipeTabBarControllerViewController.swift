@@ -17,7 +17,7 @@ class SwipeTabBarControllerViewController: UIViewController {
     var selectedIndex: Int = 0
     // MARK: - private var
     private var dragBeginPosition: CGFloat = 0.0
-    private var dragEndPosition: CGFloat = 0.0
+    private var dragChangedPosition: CGFloat = 0.0
     
     // MARK: - override var
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -54,7 +54,6 @@ class SwipeTabBarControllerViewController: UIViewController {
         setTabBar()
         
         for contentVC in viewControllers {
-            //contentVC.view.frame = CGRect(x: 0, y: 0, width: view.bounds.width * 1.25, height: view.bounds.height - 70)
             addChildViewController(contentVC)
             didMove(toParentViewController: contentVC)
         }
@@ -146,10 +145,6 @@ extension SwipeTabBarControllerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SwipeContentCell
         
-//        let view1 = cell.contentView
-//        view1.layer.borderColor = UIColor.red.cgColor
-//        view1.layer.borderWidth = 10
-        
         for view in cell.contentView.subviews {
             view.removeFromSuperview()
         }
@@ -158,9 +153,7 @@ extension SwipeTabBarControllerViewController: UICollectionViewDataSource {
         cell.contentView.addSubview(contentView!)
         
         let red = (CGFloat(indexPath.item) + 1) * 0.18
-        cell.backgroundColor = UIColor(red: red, green: 0.5, blue: 0.3, alpha: 1)
-        print(cell.bounds)
-        
+        contentView?.backgroundColor = UIColor(white: 0.9, alpha: red)
         
         if indexPath.item == 0 {
             cell.isShowRightShadow = true
@@ -189,22 +182,22 @@ extension SwipeTabBarControllerViewController: UICollectionViewDelegateFlowLayou
 }
 
 extension SwipeTabBarControllerViewController: UIGestureRecognizerDelegate {
-    @objc func swipeAction(swipe: UISwipeGestureRecognizer) {
-        if swipe.direction == .left {
-            print("Swipe Left")
-        }
-        else if swipe.direction == .right {
-            print("Swipe Right")
-        }
-    }
-    
     @objc func panAction(pan: UIPanGestureRecognizer) {
         if pan.state == .began {
             dragBeginPosition = collectionView.contentOffset.x
-            print("Pan Begin x: \(dragEndPosition)")
+            dragChangedPosition = collectionView.contentOffset.x
+            print("Pan Begin x: \(dragBeginPosition)")
+        }
+        else if pan.state == .changed {
+            let movedOffset = collectionView.contentOffset.x - dragChangedPosition
+            let leadingConstant = movedOffset / CGFloat(tabBar.items.count + 1)
+            print(leadingConstant)
+            tabBar.highlightViewLeadingConstraint?.constant += leadingConstant
+            
+            dragChangedPosition = collectionView.contentOffset.x
         }
         else if pan.state == .ended {
-            dragEndPosition = collectionView.contentOffset.x
+            let dragEndPosition = collectionView.contentOffset.x
             print("Pan End x: \(dragEndPosition)")
             let dragMiniDistance = view.bounds.width / 4
             
@@ -212,23 +205,17 @@ extension SwipeTabBarControllerViewController: UIGestureRecognizerDelegate {
             // http://www.jianshu.com/p/b422d92738ac
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now(), execute: {
                 // To fix in center
-                if self.dragBeginPosition > self.dragEndPosition {
-                    if self.selectedIndex != 0 && self.dragBeginPosition - self.dragEndPosition > dragMiniDistance {
+                if self.dragBeginPosition > dragEndPosition {
+                    if self.selectedIndex != 0 && self.dragBeginPosition - dragEndPosition > dragMiniDistance {
                         self.selectedIndex -= 1
-                        self.tabBar.animateItemsWhenTap(currentItem: self.tabBar.items[self.selectedIndex])
                     }
-                    else {
-                        self.itemOnSelected(item: self.selectedIndex)
-                    }
+                    self.tabBar.animateItemsWhenTap(currentItem: self.tabBar.items[self.selectedIndex])
                 }
                 else {
-                    if self.selectedIndex != self.tabBar.items.count - 1 && self.dragEndPosition - self.dragBeginPosition > dragMiniDistance {
+                    if self.selectedIndex != self.tabBar.items.count - 1 && dragEndPosition - self.dragBeginPosition > dragMiniDistance {
                         self.selectedIndex += 1
-                        self.tabBar.animateItemsWhenTap(currentItem: self.tabBar.items[self.selectedIndex])
                     }
-                    else {
-                        self.itemOnSelected(item: self.selectedIndex)
-                    }
+                    self.tabBar.animateItemsWhenTap(currentItem: self.tabBar.items[self.selectedIndex])
                 }
             })
             return

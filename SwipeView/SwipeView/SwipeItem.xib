@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwipeItem" customModule="SwipeView" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="NtY-Ob-AmH" id="vqQ-vC-B6C"/>
+                <outlet property="leftArrowImageView" destination="KZn-Go-Qhs" id="C3H-nK-7a4"/>
+                <outlet property="rightArrowImageView" destination="GeH-Tc-Fjn" id="gsZ-6v-H4U"/>
                 <outlet property="titleLabel" destination="Qum-NG-aJV" id="25C-uR-NoP"/>
             </connections>
         </placeholder>
@@ -51,10 +53,25 @@
                         <constraint firstAttribute="width" constant="1" id="Uut-PH-Kqw"/>
                     </constraints>
                 </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="KZn-Go-Qhs">
+                    <rect key="frame" x="5" y="254.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="HJo-AA-Qty"/>
+                        <constraint firstAttribute="height" constant="20" id="v3U-Dr-rwl"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="GeH-Tc-Fjn">
+                    <rect key="frame" x="350" y="254" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="tNB-F6-scs"/>
+                        <constraint firstAttribute="height" constant="20" id="tuY-zO-u8c"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="zBH-Kf-ZGu" firstAttribute="top" secondItem="ogn-Sd-Uj4" secondAttribute="top" id="78l-wl-NWr"/>
+                <constraint firstItem="KZn-Go-Qhs" firstAttribute="centerY" secondItem="NtY-Ob-AmH" secondAttribute="centerY" id="7Bf-wi-g0s"/>
                 <constraint firstItem="Qum-NG-aJV" firstAttribute="centerX" secondItem="ogn-Sd-Uj4" secondAttribute="centerX" id="8FB-pF-avi"/>
                 <constraint firstItem="y6h-x1-2Se" firstAttribute="top" secondItem="ogn-Sd-Uj4" secondAttribute="top" id="Dx8-eu-XT7"/>
                 <constraint firstAttribute="bottom" secondItem="zBH-Kf-ZGu" secondAttribute="bottom" id="Jcn-SP-lC4"/>
@@ -62,14 +79,18 @@
                 <constraint firstItem="NtY-Ob-AmH" firstAttribute="top" secondItem="ogn-Sd-Uj4" secondAttribute="top" constant="4" id="Z8c-S2-JMv"/>
                 <constraint firstAttribute="trailing" secondItem="y6h-x1-2Se" secondAttribute="trailing" id="cFh-sd-4X2"/>
                 <constraint firstItem="NtY-Ob-AmH" firstAttribute="height" secondItem="ogn-Sd-Uj4" secondAttribute="height" multiplier="0.8" constant="-12" id="g8W-ff-WZ7"/>
+                <constraint firstItem="GeH-Tc-Fjn" firstAttribute="centerY" secondItem="NtY-Ob-AmH" secondAttribute="centerY" id="kpR-Iq-O8P"/>
                 <constraint firstAttribute="bottom" secondItem="y6h-x1-2Se" secondAttribute="bottom" id="pUL-qI-27O"/>
                 <constraint firstItem="zBH-Kf-ZGu" firstAttribute="leading" secondItem="ogn-Sd-Uj4" secondAttribute="leading" id="sHe-lc-xYz"/>
+                <constraint firstItem="y6h-x1-2Se" firstAttribute="leading" secondItem="GeH-Tc-Fjn" secondAttribute="trailing" constant="4" id="tjD-V2-CAN"/>
+                <constraint firstItem="KZn-Go-Qhs" firstAttribute="leading" secondItem="zBH-Kf-ZGu" secondAttribute="trailing" constant="4" id="u8P-rO-ePY"/>
                 <constraint firstItem="NtY-Ob-AmH" firstAttribute="centerX" secondItem="ogn-Sd-Uj4" secondAttribute="centerX" id="vHs-Ij-Gsa"/>
             </constraints>
-            <point key="canvasLocation" x="-115" y="129"/>
+            <point key="canvasLocation" x="-115.5" y="128.5"/>
         </view>
     </objects>
     <resources>
         <image name="fire" width="42" height="42"/>
+        <image name="triangle-arrow" width="42" height="42"/>
     </resources>
 </document>

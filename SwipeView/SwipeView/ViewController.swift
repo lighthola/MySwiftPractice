@@ -45,8 +45,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setSwipTabView()
-        
         view1.isHidden = true
         
         let swipeItem = SwipeItem(frame: CGRect(x: view.bounds.width/2 - 34, y: 300, width: 69, height: 100))
@@ -67,20 +65,6 @@ class ViewController: UIViewController {
         
     }
     
-    func setSwipTabView() {
-        
-        let swipeTabView = SwipeTabView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 80))
-        swipeTabView.center = view.center
-        view.addSubview(swipeTabView)
-        var tabs = [SwipeTabItemData]()
-        tabs.append(SwipeTabItemData(image: UIImage(named: "electric-car")!, title: "小米"))
-        tabs.append(SwipeTabItemData(image: UIImage(named: "energy")!, title: "大米"))
-        tabs.append(SwipeTabItemData(image: UIImage(named: "fire")!, title: "小八"))
-        tabs.append(SwipeTabItemData(image: UIImage(named: "tree")!, title: "米干"))
-        tabs.append(SwipeTabItemData(image: UIImage(named: "wind-mill")!, title: "黑糖"))
-        swipeTabView.tabs = tabs
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
