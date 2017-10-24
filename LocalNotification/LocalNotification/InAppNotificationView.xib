@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InAppNotificationView" customModule="LocalNotification" customModuleProvider="target">
+            <connections>
+                <outlet property="appiconImageView" destination="uwO-ri-nyl" id="aP3-nx-ahJ"/>
+                <outlet property="containerView" destination="iN0-l3-epB" id="8fh-Hq-oai"/>
+                <outlet property="localNotificationLabel" destination="6Ez-ys-1SZ" id="gCk-s5-rPL"/>
+                <outlet property="messageLabel" destination="Q3T-pL-Pe9" id="wbh-vp-VlS"/>
+                <outlet property="swipeUpGesture" destination="qRP-qP-7kl" id="oe6-X8-yXv"/>
+                <outlet property="tapGesture" destination="HNp-QI-kin" id="uCX-sn-S6w"/>
+                <outlet property="timeLabel" destination="DvX-Se-feY" id="2ib-aI-kkf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="uwO-ri-nyl">
+                    <rect key="frame" x="16" y="8" width="25" height="25"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="1So-pd-YmM"/>
+                        <constraint firstAttribute="height" constant="25" id="RMR-Fl-hQv"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LocalNotification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ez-ys-1SZ">
+                    <rect key="frame" x="57" y="8" width="103" height="14.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3T-pL-Pe9">
+                    <rect key="frame" x="57" y="23" width="310" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvX-Se-feY">
+                    <rect key="frame" x="176" y="8" width="28" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="uwO-ri-nyl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="BCJ-HW-xxq"/>
+                <constraint firstItem="Q3T-pL-Pe9" firstAttribute="top" secondItem="6Ez-ys-1SZ" secondAttribute="bottom" id="I5R-LY-WG0"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DvX-Se-feY" secondAttribute="trailing" constant="8" id="L7x-0E-q4S"/>
+                <constraint firstItem="DvX-Se-feY" firstAttribute="leading" secondItem="6Ez-ys-1SZ" secondAttribute="trailing" constant="16" id="TSI-5f-x4u"/>
+                <constraint firstItem="6Ez-ys-1SZ" firstAttribute="leading" secondItem="uwO-ri-nyl" secondAttribute="trailing" constant="16" id="Xye-Bz-2xN"/>
+                <constraint firstItem="6Ez-ys-1SZ" firstAttribute="top" secondItem="uwO-ri-nyl" secondAttribute="top" id="ZrA-69-8kw"/>
+                <constraint firstAttribute="trailing" secondItem="Q3T-pL-Pe9" secondAttribute="trailing" constant="8" id="aln-Cc-DWT"/>
+                <constraint firstItem="DvX-Se-feY" firstAttribute="top" secondItem="6Ez-ys-1SZ" secondAttribute="top" id="c9R-iH-Nvl"/>
+                <constraint firstItem="Q3T-pL-Pe9" firstAttribute="leading" secondItem="6Ez-ys-1SZ" secondAttribute="leading" id="dZq-Kv-DvE"/>
+                <constraint firstItem="uwO-ri-nyl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ly2-rg-Goe"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="HNp-QI-kin" appends="YES" id="eRC-uq-aTH"/>
+                <outletCollection property="gestureRecognizers" destination="qRP-qP-7kl" appends="YES" id="CS0-v0-vW2"/>
+            </connections>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
+        </view>
+        <tapGestureRecognizer id="HNp-QI-kin">
+            <connections>
+                <action selector="tapAction:" destination="-1" id="lpk-7b-M1A"/>
+            </connections>
+        </tapGestureRecognizer>
+        <swipeGestureRecognizer direction="up" id="qRP-qP-7kl">
+            <connections>
+                <action selector="swipeUpActon:" destination="-1" id="7WR-NW-KJP"/>
+            </connections>
+        </swipeGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="circle.png" width="2000" height="2000"/>
+    </resources>
+</document>
