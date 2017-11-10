@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D39169AD1FB4052D007CD21F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39169AC1FB4052D007CD21F /* AppDelegate.swift */; };
+		D39169AF1FB4052D007CD21F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39169AE1FB4052D007CD21F /* ViewController.swift */; };
+		D39169B21FB4052D007CD21F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39169B01FB4052D007CD21F /* Main.storyboard */; };
+		D39169B41FB4052D007CD21F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D39169B31FB4052D007CD21F /* Assets.xcassets */; };
+		D39169B71FB4052D007CD21F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D39169B51FB4052D007CD21F /* LaunchScreen.storyboard */; };
+		D39169C21FB4052D007CD21F /* TheTransOverdueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39169C11FB4052D007CD21F /* TheTransOverdueTests.swift */; };
+		D39169CD1FB4052D007CD21F /* TheTransOverdueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39169CC1FB4052D007CD21F /* TheTransOverdueUITests.swift */; };
+		D39169DC1FB407FA007CD21F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39169DB1FB407FA007CD21F /* Alamofire.framework */; };
+		D39169E21FB42375007CD21F /* ObjCBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D39169E11FB42375007CD21F /* ObjCBase.m */; };
+		D39169E51FB423F2007CD21F /* HMAC-SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39169E41FB423F2007CD21F /* HMAC-SHA1.swift */; };
+		D39169E71FB435A1007CD21F /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39169E61FB435A1007CD21F /* CryptoSwift.framework */; };
+		D39169E91FB4460F007CD21F /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39169E81FB4460F007CD21F /* Gzip.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D39169BE1FB4052D007CD21F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D39169A11FB4052D007CD21F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D39169A81FB4052D007CD21F;
+			remoteInfo = TheTransOverdue;
+		};
+		D39169C91FB4052D007CD21F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D39169A11FB4052D007CD21F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D39169A81FB4052D007CD21F;
+			remoteInfo = TheTransOverdue;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D39169A91FB4052D007CD21F /* TheTransOverdue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheTransOverdue.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39169AC1FB4052D007CD21F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D39169AE1FB4052D007CD21F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D39169B11FB4052D007CD21F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D39169B31FB4052D007CD21F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D39169B61FB4052D007CD21F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D39169B81FB4052D007CD21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D39169BD1FB4052D007CD21F /* TheTransOverdueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheTransOverdueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39169C11FB4052D007CD21F /* TheTransOverdueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheTransOverdueTests.swift; sourceTree = "<group>"; };
+		D39169C31FB4052D007CD21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D39169C81FB4052D007CD21F /* TheTransOverdueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheTransOverdueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D39169CC1FB4052D007CD21F /* TheTransOverdueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheTransOverdueUITests.swift; sourceTree = "<group>"; };
+		D39169CE1FB4052D007CD21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D39169DB1FB407FA007CD21F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		D39169DF1FB42375007CD21F /* TheTransOverdue-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TheTransOverdue-Bridging-Header.h"; sourceTree = "<group>"; };
+		D39169E01FB42375007CD21F /* ObjCBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBase.h; sourceTree = "<group>"; };
+		D39169E11FB42375007CD21F /* ObjCBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjCBase.m; sourceTree = "<group>"; };
+		D39169E41FB423F2007CD21F /* HMAC-SHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HMAC-SHA1.swift"; sourceTree = "<group>"; };
+		D39169E61FB435A1007CD21F /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
+		D39169E81FB4460F007CD21F /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = Carthage/Build/iOS/Gzip.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D39169A61FB4052D007CD21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39169E91FB4460F007CD21F /* Gzip.framework in Frameworks */,
+				D39169E71FB435A1007CD21F /* CryptoSwift.framework in Frameworks */,
+				D39169DC1FB407FA007CD21F /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39169BA1FB4052D007CD21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39169C51FB4052D007CD21F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D39169A01FB4052D007CD21F = {
+			isa = PBXGroup;
+			children = (
+				D39169AB1FB4052D007CD21F /* TheTransOverdue */,
+				D39169C01FB4052D007CD21F /* TheTransOverdueTests */,
+				D39169CB1FB4052D007CD21F /* TheTransOverdueUITests */,
+				D39169AA1FB4052D007CD21F /* Products */,
+				D39169DA1FB407FA007CD21F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D39169AA1FB4052D007CD21F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D39169A91FB4052D007CD21F /* TheTransOverdue.app */,
+				D39169BD1FB4052D007CD21F /* TheTransOverdueTests.xctest */,
+				D39169C81FB4052D007CD21F /* TheTransOverdueUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D39169AB1FB4052D007CD21F /* TheTransOverdue */ = {
+			isa = PBXGroup;
+			children = (
+				D39169AC1FB4052D007CD21F /* AppDelegate.swift */,
+				D39169AE1FB4052D007CD21F /* ViewController.swift */,
+				D39169E41FB423F2007CD21F /* HMAC-SHA1.swift */,
+				D39169E31FB42381007CD21F /* Objc */,
+				D39169B01FB4052D007CD21F /* Main.storyboard */,
+				D39169B31FB4052D007CD21F /* Assets.xcassets */,
+				D39169B51FB4052D007CD21F /* LaunchScreen.storyboard */,
+				D39169B81FB4052D007CD21F /* Info.plist */,
+				D39169DF1FB42375007CD21F /* TheTransOverdue-Bridging-Header.h */,
+			);
+			path = TheTransOverdue;
+			sourceTree = "<group>";
+		};
+		D39169C01FB4052D007CD21F /* TheTransOverdueTests */ = {
+			isa = PBXGroup;
+			children = (
+				D39169C11FB4052D007CD21F /* TheTransOverdueTests.swift */,
+				D39169C31FB4052D007CD21F /* Info.plist */,
+			);
+			path = TheTransOverdueTests;
+			sourceTree = "<group>";
+		};
+		D39169CB1FB4052D007CD21F /* TheTransOverdueUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D39169CC1FB4052D007CD21F /* TheTransOverdueUITests.swift */,
+				D39169CE1FB4052D007CD21F /* Info.plist */,
+			);
+			path = TheTransOverdueUITests;
+			sourceTree = "<group>";
+		};
+		D39169DA1FB407FA007CD21F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D39169E81FB4460F007CD21F /* Gzip.framework */,
+				D39169E61FB435A1007CD21F /* CryptoSwift.framework */,
+				D39169DB1FB407FA007CD21F /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D39169E31FB42381007CD21F /* Objc */ = {
+			isa = PBXGroup;
+			children = (
+				D39169E01FB42375007CD21F /* ObjCBase.h */,
+				D39169E11FB42375007CD21F /* ObjCBase.m */,
+			);
+			path = Objc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D39169A81FB4052D007CD21F /* TheTransOverdue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D39169D11FB4052D007CD21F /* Build configuration list for PBXNativeTarget "TheTransOverdue" */;
+			buildPhases = (
+				D39169A51FB4052D007CD21F /* Sources */,
+				D39169A61FB4052D007CD21F /* Frameworks */,
+				D39169A71FB4052D007CD21F /* Resources */,
+				D39169DE1FB408BB007CD21F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TheTransOverdue;
+			productName = TheTransOverdue;
+			productReference = D39169A91FB4052D007CD21F /* TheTransOverdue.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D39169BC1FB4052D007CD21F /* TheTransOverdueTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D39169D41FB4052D007CD21F /* Build configuration list for PBXNativeTarget "TheTransOverdueTests" */;
+			buildPhases = (
+				D39169B91FB4052D007CD21F /* Sources */,
+				D39169BA1FB4052D007CD21F /* Frameworks */,
+				D39169BB1FB4052D007CD21F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D39169BF1FB4052D007CD21F /* PBXTargetDependency */,
+			);
+			name = TheTransOverdueTests;
+			productName = TheTransOverdueTests;
+			productReference = D39169BD1FB4052D007CD21F /* TheTransOverdueTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D39169C71FB4052D007CD21F /* TheTransOverdueUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D39169D71FB4052D007CD21F /* Build configuration list for PBXNativeTarget "TheTransOverdueUITests" */;
+			buildPhases = (
+				D39169C41FB4052D007CD21F /* Sources */,
+				D39169C51FB4052D007CD21F /* Frameworks */,
+				D39169C61FB4052D007CD21F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D39169CA1FB4052D007CD21F /* PBXTargetDependency */,
+			);
+			name = TheTransOverdueUITests;
+			productName = TheTransOverdueUITests;
+			productReference = D39169C81FB4052D007CD21F /* TheTransOverdueUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D39169A11FB4052D007CD21F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Bevis Chen";
+				TargetAttributes = {
+					D39169A81FB4052D007CD21F = {
+						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
+						ProvisioningStyle = Automatic;
+					};
+					D39169BC1FB4052D007CD21F = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D39169A81FB4052D007CD21F;
+					};
+					D39169C71FB4052D007CD21F = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D39169A81FB4052D007CD21F;
+					};
+				};
+			};
+			buildConfigurationList = D39169A41FB4052D007CD21F /* Build configuration list for PBXProject "TheTransOverdue" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D39169A01FB4052D007CD21F;
+			productRefGroup = D39169AA1FB4052D007CD21F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D39169A81FB4052D007CD21F /* TheTransOverdue */,
+				D39169BC1FB4052D007CD21F /* TheTransOverdueTests */,
+				D39169C71FB4052D007CD21F /* TheTransOverdueUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D39169A71FB4052D007CD21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39169B71FB4052D007CD21F /* LaunchScreen.storyboard in Resources */,
+				D39169B41FB4052D007CD21F /* Assets.xcassets in Resources */,
+				D39169B21FB4052D007CD21F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39169BB1FB4052D007CD21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39169C61FB4052D007CD21F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D39169DE1FB408BB007CD21F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CryptoSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Gzip.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/CryptoSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Gzip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/Carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D39169A51FB4052D007CD21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39169AF1FB4052D007CD21F /* ViewController.swift in Sources */,
+				D39169E51FB423F2007CD21F /* HMAC-SHA1.swift in Sources */,
+				D39169E21FB42375007CD21F /* ObjCBase.m in Sources */,
+				D39169AD1FB4052D007CD21F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39169B91FB4052D007CD21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39169C21FB4052D007CD21F /* TheTransOverdueTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D39169C41FB4052D007CD21F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D39169CD1FB4052D007CD21F /* TheTransOverdueUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D39169BF1FB4052D007CD21F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D39169A81FB4052D007CD21F /* TheTransOverdue */;
+			targetProxy = D39169BE1FB4052D007CD21F /* PBXContainerItemProxy */;
+		};
+		D39169CA1FB4052D007CD21F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D39169A81FB4052D007CD21F /* TheTransOverdue */;
+			targetProxy = D39169C91FB4052D007CD21F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D39169B01FB4052D007CD21F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D39169B11FB4052D007CD21F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D39169B51FB4052D007CD21F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D39169B61FB4052D007CD21F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D39169CF1FB4052D007CD21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D39169D01FB4052D007CD21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D39169D21FB4052D007CD21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54DV74A3NZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = TheTransOverdue/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTransOverdue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheTransOverdue/TheTransOverdue-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D39169D31FB4052D007CD21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54DV74A3NZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = TheTransOverdue/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTransOverdue;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TheTransOverdue/TheTransOverdue-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D39169D51FB4052D007CD21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54DV74A3NZ;
+				INFOPLIST_FILE = TheTransOverdueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTransOverdueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheTransOverdue.app/TheTransOverdue";
+			};
+			name = Debug;
+		};
+		D39169D61FB4052D007CD21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54DV74A3NZ;
+				INFOPLIST_FILE = TheTransOverdueTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTransOverdueTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TheTransOverdue.app/TheTransOverdue";
+			};
+			name = Release;
+		};
+		D39169D81FB4052D007CD21F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54DV74A3NZ;
+				INFOPLIST_FILE = TheTransOverdueUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTransOverdueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheTransOverdue;
+			};
+			name = Debug;
+		};
+		D39169D91FB4052D007CD21F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54DV74A3NZ;
+				INFOPLIST_FILE = TheTransOverdueUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTransOverdueUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TheTransOverdue;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D39169A41FB4052D007CD21F /* Build configuration list for PBXProject "TheTransOverdue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39169CF1FB4052D007CD21F /* Debug */,
+				D39169D01FB4052D007CD21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D39169D11FB4052D007CD21F /* Build configuration list for PBXNativeTarget "TheTransOverdue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39169D21FB4052D007CD21F /* Debug */,
+				D39169D31FB4052D007CD21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D39169D41FB4052D007CD21F /* Build configuration list for PBXNativeTarget "TheTransOverdueTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39169D51FB4052D007CD21F /* Debug */,
+				D39169D61FB4052D007CD21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D39169D71FB4052D007CD21F /* Build configuration list for PBXNativeTarget "TheTransOverdueUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D39169D81FB4052D007CD21F /* Debug */,
+				D39169D91FB4052D007CD21F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D39169A11FB4052D007CD21F /* Project object */;
+}
