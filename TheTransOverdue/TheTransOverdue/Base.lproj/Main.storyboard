@@ -43,7 +43,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9o-Mz-BGx">
                                                     <rect key="frame" x="15" y="11" width="42" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="rsH-yf-3BN"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="rsH-yf-3BN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -64,7 +64,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="區間快" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5y-Ib-Bth">
                                                     <rect key="frame" x="65" y="11" width="52" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="52" id="U6u-oP-i9j"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="U6u-oP-i9j"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -73,10 +73,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="s9o-Mz-BGx" firstAttribute="leading" secondItem="2Et-II-0Ec" secondAttribute="leadingMargin" id="1l3-Of-T5D"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="rjY-4O-5r4" secondAttribute="trailing" id="1rX-F5-fyB"/>
                                                 <constraint firstItem="s9o-Mz-BGx" firstAttribute="top" secondItem="2Et-II-0Ec" secondAttribute="topMargin" id="62a-4T-5qW"/>
                                                 <constraint firstItem="E5N-o4-pej" firstAttribute="leading" secondItem="2Et-II-0Ec" secondAttribute="leadingMargin" id="9XH-Hz-a99"/>
                                                 <constraint firstItem="q5y-Ib-Bth" firstAttribute="leading" secondItem="s9o-Mz-BGx" secondAttribute="trailing" constant="8" id="9v5-ur-tgt"/>
                                                 <constraint firstItem="q5y-Ib-Bth" firstAttribute="top" secondItem="2Et-II-0Ec" secondAttribute="topMargin" id="IAH-4E-jUg"/>
+                                                <constraint firstItem="aUf-rU-1o3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E5N-o4-pej" secondAttribute="trailing" constant="8" symbolic="YES" id="NeW-2h-oUn"/>
                                                 <constraint firstItem="rjY-4O-5r4" firstAttribute="leading" secondItem="q5y-Ib-Bth" secondAttribute="trailing" constant="8" id="XNC-gm-Lpx"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aUf-rU-1o3" secondAttribute="trailing" id="cm4-c3-tyn"/>
                                                 <constraint firstItem="rjY-4O-5r4" firstAttribute="top" secondItem="2Et-II-0Ec" secondAttribute="topMargin" id="fZH-zG-zhi"/>
