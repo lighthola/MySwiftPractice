@@ -19,6 +19,9 @@
 		D39169E51FB423F2007CD21F /* HMAC-SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39169E41FB423F2007CD21F /* HMAC-SHA1.swift */; };
 		D39169E71FB435A1007CD21F /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39169E61FB435A1007CD21F /* CryptoSwift.framework */; };
 		D39169E91FB4460F007CD21F /* Gzip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39169E81FB4460F007CD21F /* Gzip.framework */; };
+		D39189EA1FB98A4B00021A46 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39189E91FB98A4B00021A46 /* API.swift */; };
+		D39189EC1FB98A9E00021A46 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39189EB1FB98A9E00021A46 /* APIModel.swift */; };
+		D39189EE1FB98B2300021A46 /* InAppDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39189ED1FB98B2300021A46 /* InAppDataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		D39169E41FB423F2007CD21F /* HMAC-SHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HMAC-SHA1.swift"; sourceTree = "<group>"; };
 		D39169E61FB435A1007CD21F /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = Carthage/Build/iOS/CryptoSwift.framework; sourceTree = "<group>"; };
 		D39169E81FB4460F007CD21F /* Gzip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gzip.framework; path = Carthage/Build/iOS/Gzip.framework; sourceTree = "<group>"; };
+		D39189E91FB98A4B00021A46 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D39189EB1FB98A9E00021A46 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		D39189ED1FB98B2300021A46 /* InAppDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppDataHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,9 @@
 			children = (
 				D39169AC1FB4052D007CD21F /* AppDelegate.swift */,
 				D39169AE1FB4052D007CD21F /* ViewController.swift */,
+				D39189E91FB98A4B00021A46 /* API.swift */,
+				D39189EB1FB98A9E00021A46 /* APIModel.swift */,
+				D39189ED1FB98B2300021A46 /* InAppDataHandler.swift */,
 				D39169E41FB423F2007CD21F /* HMAC-SHA1.swift */,
 				D39169E31FB42381007CD21F /* Objc */,
 				D39169B01FB4052D007CD21F /* Main.storyboard */,
@@ -325,6 +334,9 @@
 				D39169E51FB423F2007CD21F /* HMAC-SHA1.swift in Sources */,
 				D39169E21FB42375007CD21F /* ObjCBase.m in Sources */,
 				D39169AD1FB4052D007CD21F /* AppDelegate.swift in Sources */,
+				D39189EE1FB98B2300021A46 /* InAppDataHandler.swift in Sources */,
+				D39189EC1FB98A9E00021A46 /* APIModel.swift in Sources */,
+				D39189EA1FB98A4B00021A46 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +512,7 @@
 				INFOPLIST_FILE = TheTransOverdue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTransOverdue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTrainOverdue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TheTransOverdue/TheTransOverdue-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -523,7 +535,7 @@
 				INFOPLIST_FILE = TheTransOverdue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTransOverdue;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.TheTrainOverdue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TheTransOverdue/TheTransOverdue-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
