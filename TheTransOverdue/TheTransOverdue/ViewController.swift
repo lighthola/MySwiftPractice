@@ -141,6 +141,32 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var settingViewTop: NSLayoutConstraint!
+    @IBOutlet weak var searchPickerView: UIPickerView!
+    
+    var searchStation: Int {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "searchStation")
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.integer(forKey: "searchStation")
+        }
+    }
+    
+    var searchTrainDirection: Int {
+        set {
+            UserDefaults.standard.set(newValue, forKey: "searchTrainDirection")
+            UserDefaults.standard.synchronize()
+        }
+        get {
+            return UserDefaults.standard.integer(forKey: "searchTrainDirection")
+        }
+    }
+   
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -148,6 +174,10 @@ class ViewController: UIViewController {
         workPickerView.selectRow(workTrainDirection, inComponent: 1, animated: false)
         offWorkPickerView.selectRow(offWorkStation, inComponent: 0, animated: false)
         offWorkPickerView.selectRow(offWorkTrainDirection, inComponent: 1, animated: false)
+        searchPickerView.selectRow(searchStation, inComponent: 0, animated: false)
+        searchPickerView.selectRow(searchTrainDirection, inComponent: 1, animated: false)
+        
+        settingViewTop.constant = -200
 
         refresh()
         
@@ -170,9 +200,55 @@ class ViewController: UIViewController {
     
     
     func refreshModel() {
-        let trainNo = isMorning ? stationList[workStation].stationNo : stationList[offWorkStation].stationNo
+        let stationNo = isMorning ? stationList[workStation].stationNo : stationList[offWorkStation].stationNo
         let direction = isMorning ? String(workTrainDirection) : String(offWorkTrainDirection)
-        API().getRailLiveBoard(id: trainNo, direction: direction, complection: { [unowned self] (liveBoard) in
+        apiGetRailLiveBoard(stationNo: stationNo, direction: direction)
+    }
+    
+    @IBAction func settingBtnPressed(_ sender: Any) {
+        if settingViewTop.constant == 0 {
+            workStation = workPickerView.selectedRow(inComponent: 0)
+            offWorkStation = offWorkPickerView.selectedRow(inComponent: 0)
+            workTrainDirection = workPickerView.selectedRow(inComponent: 1)
+            offWorkTrainDirection = offWorkPickerView.selectedRow(inComponent: 1)
+            UIView.animate(withDuration: 0.25, animations: {
+                self.settingViewTop.constant = -200
+                self.view.layoutIfNeeded()
+            }) { (_) in
+                self.indicatorView.startAnimating()
+                self.refresh()
+            }
+        } else {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.settingViewTop.constant = 0
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+        
+    }
+
+    @IBAction func searchBtnPressed(_ sender: Any) {
+        searchStation = searchPickerView.selectedRow(inComponent: 0)
+        searchTrainDirection = searchPickerView.selectedRow(inComponent: 1)
+        let stationNo = stationList[searchStation].stationNo
+        let direction = String(searchTrainDirection)
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.settingViewTop.constant = -200
+            self.view.layoutIfNeeded()
+        }) { (_) in
+            
+            self.navigationItem.title = "立即查 " +  self.stationList[self.searchStation].twName +  self.trainDirection[self.searchTrainDirection]
+            self.indicatorView.startAnimating()
+            self.apiGetRailLiveBoard(stationNo: stationNo, direction: direction)
+        }
+    }
+    
+}
+
+extension ViewController {
+    func apiGetRailLiveBoard(stationNo: String, direction: String) {
+        API().getRailLiveBoard(id: stationNo, direction: direction, complection: { [unowned self] (liveBoard) in
             self.liveBoard = liveBoard
             self.refreshControl?.endRefreshing()
             self.indicatorView.stopAnimating()
@@ -184,15 +260,6 @@ class ViewController: UIViewController {
             self.refreshControl?.endRefreshing()
             self.indicatorView.stopAnimating()
         }
-    }
-    
-    @IBAction func searchBtnPressed(_ sender: Any) {
-        workStation = workPickerView.selectedRow(inComponent: 0)
-        offWorkStation = offWorkPickerView.selectedRow(inComponent: 0)
-        workTrainDirection = workPickerView.selectedRow(inComponent: 1)
-        offWorkTrainDirection = offWorkPickerView.selectedRow(inComponent: 1)
-        indicatorView.startAnimating()
-        refresh()
     }
 }
 
