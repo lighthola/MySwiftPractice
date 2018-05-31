@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "下班"; ObjectID = "AiT-U3-oC7"; */
+"AiT-U3-oC7.normalTitle" = "下班";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "V1m-4G-9cF"; */
+"V1m-4G-9cF.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "heM-aW-gpR"; */
+"heM-aW-gpR.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "上班"; ObjectID = "mHw-Yf-YoJ"; */
+"mHw-Yf-YoJ.normalTitle" = "上班";

@@ -14,6 +14,7 @@ class InAppNotificationView: UIView {
     var tapAction: (()->())?
     
     @discardableResult
+    @objc
     class func show(icon: UIImage? = UIApplication.shared.icon,
                     title: String = "本地通知",
                     message: String,
@@ -156,6 +157,7 @@ class InAppNotificationView: UIView {
     }
 }
 
+@objc
 extension UIApplication {
     var icon: UIImage? {
         guard let iconsDictionary = Bundle.main.infoDictionary?["CFBundleIcons"] as? NSDictionary,

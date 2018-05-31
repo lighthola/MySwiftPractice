@@ -1,0 +1,27 @@
+
+/* Class = "UINavigationItem"; title = "45天歷史紀錄"; ObjectID = "2sj-5Y-mUq"; */
+"2sj-5Y-mUq.title" = "45天歷史紀錄";
+
+/* Class = "UIButton"; normalTitle = "刪除今日下班打卡"; ObjectID = "6Gy-gE-ABA"; */
+"6Gy-gE-ABA.normalTitle" = "刪除今日下班打卡";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Cbv-JX-5HC"; */
+"Cbv-JX-5HC.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Log"; ObjectID = "Gkm-Qz-PY7"; */
+"Gkm-Qz-PY7.normalTitle" = "Log";
+
+/* Class = "UINavigationItem"; title = "打卡"; ObjectID = "Old-ZB-POG"; */
+"Old-ZB-POG.title" = "打卡";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eAc-v8-wVl"; */
+"eAc-v8-wVl.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "上班打卡"; ObjectID = "gOB-8d-nwU"; */
+"gOB-8d-nwU.normalTitle" = "上班打卡";
+
+/* Class = "UIButton"; normalTitle = "刪除今日上班打卡"; ObjectID = "i65-90-bt3"; */
+"i65-90-bt3.normalTitle" = "刪除今日上班打卡";
+
+/* Class = "UIButton"; normalTitle = "下班打卡"; ObjectID = "jvi-nB-aMH"; */
+"jvi-nB-aMH.normalTitle" = "下班打卡";

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2DK-w6-WqC">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--打卡-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClockInOut" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOB-8d-nwU">
+                                <rect key="frame" x="156.5" y="129" width="62" height="30"/>
+                                <state key="normal" title="上班打卡"/>
+                                <connections>
+                                    <action selector="clockInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E8g-Kw-AcT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jvi-nB-aMH">
+                                <rect key="frame" x="156.5" y="253" width="62" height="30"/>
+                                <state key="normal" title="下班打卡"/>
+                                <connections>
+                                    <action selector="clockOutBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xa6-FN-UyH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gkm-Qz-PY7">
+                                <rect key="frame" x="172" y="380" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log"/>
+                                <connections>
+                                    <action selector="logBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ObF-ZV-zZP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-JX-5HC">
+                                <rect key="frame" x="16" y="167" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAc-v8-wVl">
+                                <rect key="frame" x="16" y="291" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i65-90-bt3">
+                                <rect key="frame" x="126" y="496" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="刪除今日上班打卡"/>
+                                <connections>
+                                    <action selector="deleteTodayClockInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="f3H-Nb-aUH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Gy-gE-ABA">
+                                <rect key="frame" x="126" y="534" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="刪除今日下班打卡"/>
+                                <connections>
+                                    <action selector="deleteTodayClockOutBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sau-5F-4Cu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jvi-nB-aMH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1LS-P8-aLA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eAc-v8-wVl" secondAttribute="trailing" constant="16" id="4Ai-aS-79K"/>
+                            <constraint firstItem="Cbv-JX-5HC" firstAttribute="top" secondItem="gOB-8d-nwU" secondAttribute="bottom" constant="8" id="GOb-aB-Zug"/>
+                            <constraint firstItem="jvi-nB-aMH" firstAttribute="top" secondItem="Cbv-JX-5HC" secondAttribute="bottom" constant="65" id="IlU-VA-ccI"/>
+                            <constraint firstItem="gOB-8d-nwU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="65" id="LJx-6e-hPW"/>
+                            <constraint firstItem="eAc-v8-wVl" firstAttribute="top" secondItem="jvi-nB-aMH" secondAttribute="bottom" constant="8" id="Zrj-lG-cNc"/>
+                            <constraint firstItem="eAc-v8-wVl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bRu-0W-uqM"/>
+                            <constraint firstItem="gOB-8d-nwU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bcr-SB-jcg"/>
+                            <constraint firstItem="Cbv-JX-5HC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cCo-RD-T0s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cbv-JX-5HC" secondAttribute="trailing" constant="16" id="lZs-6m-JRs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="打卡" id="Old-ZB-POG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="6fB-pE-npN">
+                            <connections>
+                                <action selector="editBtnPressed:" destination="BYZ-38-t0r" id="yPU-OK-Aks"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="clockInBtn" destination="gOB-8d-nwU" id="pHC-tj-uxd"/>
+                        <outlet property="clockInTimeLabel" destination="Cbv-JX-5HC" id="Epy-fo-URh"/>
+                        <outlet property="clockOutBtn" destination="jvi-nB-aMH" id="Ek4-Cc-opH"/>
+                        <outlet property="clockOutTimeLabel" destination="eAc-v8-wVl" id="5Lf-Kg-qXl"/>
+                        <outlet property="deleteTodayClockInBtn" destination="i65-90-bt3" id="kCd-av-3eP"/>
+                        <outlet property="deleteTodayClockOutBtn" destination="6Gy-gE-ABA" id="Y9e-3u-5vV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1903.2" y="31.934032983508249"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UgG-7A-Cmj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lyC-Zb-3is" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Ut4-5L-vXc"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w1m-Js-ogR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="g0T-TI-fOI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PjV-If-vWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="31.934032983508249"/>
+        </scene>
+        <!--45天歷史紀錄-->
+        <scene sceneID="17C-M0-ufs">
+            <objects>
+                <tableViewController id="u2w-Fa-7ol" customClass="ClockHistoryTableViewController" customModule="ClockInOut" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L2T-WN-d3R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="61" id="e8c-eF-909">
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e8c-eF-909" id="UhX-Uh-Eqd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="u2w-Fa-7ol" id="Cfu-Dw-7t8"/>
+                            <outlet property="delegate" destination="u2w-Fa-7ol" id="MUs-1L-TVx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="45天歷史紀錄" id="2sj-5Y-mUq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="8WK-R8-cla">
+                            <connections>
+                                <action selector="refreshBtnPressed:" destination="u2w-Fa-7ol" id="NHb-NT-Rq9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utW-hg-Rxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984.79999999999995" y="726.38680659670172"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="bu6-ia-oeH">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2DK-w6-WqC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1i6-ey-tgm">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="lyC-Zb-3is" kind="relationship" relationship="viewControllers" id="eyC-mw-pqv"/>
+                        <segue destination="rzN-Sk-Tgk" kind="relationship" relationship="viewControllers" id="k2E-k9-19b"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yjd-wM-ydz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="31.934032983508249"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xeb-Nf-laE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rzN-Sk-Tgk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="history" id="ffl-43-rvw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vmv-hB-WPK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="u2w-Fa-7ol" kind="relationship" relationship="rootViewController" id="4X9-it-K1w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k4Z-cx-poG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25" y="802"/>
+        </scene>
+    </scenes>
+</document>

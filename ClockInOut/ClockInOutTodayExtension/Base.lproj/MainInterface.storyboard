@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="ClockInOutTodayExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHw-Yf-YoJ">
+                                <rect key="frame" x="229" y="11" width="75" height="30"/>
+                                <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="7zB-Kq-F0x"/>
+                                </constraints>
+                                <state key="normal" title="上班">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clockInBtnPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="Rwx-hf-WQr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heM-aW-gpR">
+                                <rect key="frame" x="16" y="15" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiT-U3-oC7">
+                                <rect key="frame" x="229" y="59" width="75" height="30"/>
+                                <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="GJP-NX-3K6"/>
+                                </constraints>
+                                <state key="normal" title="下班">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clockOutBtnPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="nG4-Eb-E79"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKB-RJ-Jdq">
+                                <rect key="frame" x="0.0" y="49.5" width="320" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="L4g-Ua-yBO"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1m-4G-9cF">
+                                <rect key="frame" x="16" y="64" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="AiT-U3-oC7" secondAttribute="trailing" constant="16" id="26i-wO-dJp"/>
+                            <constraint firstItem="cKB-RJ-Jdq" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" id="2jO-dR-lc1"/>
+                            <constraint firstItem="AiT-U3-oC7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="V1m-4G-9cF" secondAttribute="trailing" constant="8" id="3ki-j9-fcf"/>
+                            <constraint firstItem="mHw-Yf-YoJ" firstAttribute="centerY" secondItem="heM-aW-gpR" secondAttribute="centerY" id="8xX-GY-4Ea"/>
+                            <constraint firstItem="cKB-RJ-Jdq" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="Lt8-bf-Wo9"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="cKB-RJ-Jdq" secondAttribute="trailing" id="NLd-D8-iJa"/>
+                            <constraint firstItem="mHw-Yf-YoJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="heM-aW-gpR" secondAttribute="trailing" constant="8" id="TDH-ie-Ays"/>
+                            <constraint firstItem="AiT-U3-oC7" firstAttribute="centerY" secondItem="V1m-4G-9cF" secondAttribute="centerY" id="UoH-Tp-gjR"/>
+                            <constraint firstItem="V1m-4G-9cF" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="f7R-Iu-vYN"/>
+                            <constraint firstItem="cKB-RJ-Jdq" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="fDx-R1-P6z"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="mHw-Yf-YoJ" secondAttribute="trailing" constant="16" id="gIs-Zz-wFs"/>
+                            <constraint firstItem="V1m-4G-9cF" firstAttribute="top" secondItem="cKB-RJ-Jdq" secondAttribute="bottom" constant="13.5" id="qIE-Cg-c8e"/>
+                            <constraint firstItem="cKB-RJ-Jdq" firstAttribute="top" secondItem="heM-aW-gpR" secondAttribute="bottom" constant="13.5" id="ssV-sc-3zo"/>
+                            <constraint firstItem="heM-aW-gpR" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="16" id="u68-py-epJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="100"/>
+                    <connections>
+                        <outlet property="clockInBtn" destination="mHw-Yf-YoJ" id="3tJ-E6-hTI"/>
+                        <outlet property="clockInTimeLabel" destination="heM-aW-gpR" id="HGC-Eh-1gK"/>
+                        <outlet property="clockOutBtn" destination="AiT-U3-oC7" id="K4W-r3-fgZ"/>
+                        <outlet property="clockOutTimeLabel" destination="V1m-4G-9cF" id="dof-gj-bPn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24" y="31.484257871064472"/>
+        </scene>
+    </scenes>
+</document>
