@@ -500,14 +500,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ClockInOut/ClockInOut.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6SP8MLFC5Y;
+				DEVELOPMENT_TEAM = B28A4AK28S;
 				INFOPLIST_FILE = ClockInOut/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.ClockInOut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sfw.ClockInOut01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -521,14 +521,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ClockInOut/ClockInOut.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6SP8MLFC5Y;
+				DEVELOPMENT_TEAM = B28A4AK28S;
 				INFOPLIST_FILE = ClockInOut/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.ClockInOut;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sfw.ClockInOut01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -540,7 +540,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ClockInOutTodayExtension/ClockInOutTodayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6SP8MLFC5Y;
+				DEVELOPMENT_TEAM = B28A4AK28S;
 				INFOPLIST_FILE = ClockInOutTodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -548,7 +548,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.ClockInOut.ClockInOutTodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sfw.ClockInOut01.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -561,7 +561,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ClockInOutTodayExtension/ClockInOutTodayExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6SP8MLFC5Y;
+				DEVELOPMENT_TEAM = B28A4AK28S;
 				INFOPLIST_FILE = ClockInOutTodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -569,7 +569,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bevisproject.ClockInOut.ClockInOutTodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sfw.ClockInOut01.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;

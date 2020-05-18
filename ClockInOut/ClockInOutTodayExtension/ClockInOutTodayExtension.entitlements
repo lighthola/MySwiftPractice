@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.bevisproject.ClockInOut</string>
+		<string>group.swp.test01</string>
 	</array>
 </dict>
 </plist>

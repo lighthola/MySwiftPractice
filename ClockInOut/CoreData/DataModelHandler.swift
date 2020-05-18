@@ -69,7 +69,7 @@ class DataModelHandler {
 // For Migrate To App Group
 extension DataModelHandler {
     var appGroupID: String {
-        return "group.com.bevisproject.ClockInOut"
+        return "group.swp.test01"
     }
     
     var oldPersistentStoreURL: URL {
