@@ -34,19 +34,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        do {
-            let clockInfos =
-                try Clock.fetchAll()
-            
-            for info in clockInfos {
-                print(info.id)
-                print(info.clockIn?.timeIntervalSince1970 ?? 0)
-                print(info.clockOut?.timeIntervalSince1970 ?? 0)
-                print("---")
-            }
-        } catch {
-            fatalError("\(error)")
-        }
         refreshUI()
         completionHandler(NCUpdateResult.newData)
     }

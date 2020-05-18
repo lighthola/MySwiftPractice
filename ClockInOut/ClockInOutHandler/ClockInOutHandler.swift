@@ -9,7 +9,6 @@
 import Foundation
 
 protocol ClockInOutProtocol {
-    var today: String { get }
     var isClockIn: Bool { get }
     var isClockOut: Bool { get }
     
@@ -18,73 +17,41 @@ protocol ClockInOutProtocol {
 }
 
 class ClockInOutHandler: ClockInOutProtocol {
+    
+    private var todayClock: Clock {
+        return Clock.fetchToday()
+    }
    
     var isClockIn: Bool {
-        do {
-            if let todayClock = try Clock.fetchToday() {
-                return todayClock.clockIn != nil
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-        return false
+        todayClock.clockIn != nil
     }
     
     var isClockOut: Bool {
-        do {
-            if let todayClock = try Clock.fetchToday() {
-                return todayClock.clockOut != nil
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-        return false
+        todayClock.clockOut != nil
     }
     
     var clockInTime: String? {
-        if self.isClockIn {
-            do {
-                if let clockInTime = try Clock.fetchToday()?.clockIn {
-                    return formatter.string(from: clockInTime as Date)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
+        return isClockIn ? formatter.string(from: todayClock.clockIn! as Date) : nil
     }
     
     var clockOutTime: String? {
-        if self.isClockOut {
-            do {
-                if let clockOutTime = try Clock.fetchToday()?.clockOut {
-                    return formatter.string(from: clockOutTime as Date)
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
-    
-    var today: String {
-       return Clock.date_yyyyMMdd
+        return isClockOut ? formatter.string(from: todayClock.clockOut! as Date) : nil
     }
     
     func clockIn() {
-        try? Clock.clockInUpdate()
+        Clock.clockInUpdate()
     }
     
     func clockOut() {
-        try? Clock.clockOutUpdate()
+        Clock.clockOutUpdate()
     }
     
     func deleteClockIn() {
-        try? Clock.clearClockIn()
+        Clock.clearClockIn()
     }
     
     func deleteClockOut() {
-        try? Clock.clearClockOut()
+        Clock.clearClockOut()
     }
     
     func get45DaysInfos() -> [Clock] {

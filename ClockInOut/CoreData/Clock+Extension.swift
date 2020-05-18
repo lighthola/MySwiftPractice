@@ -28,60 +28,48 @@ extension Clock {
         return try Clock.fetch(nil, 365)
     }
     
-    class func fetchToday() throws -> Clock? {
+    class func fetchToday() -> Clock {
         if let id = Int(Clock.date_yyyyMMdd) {
             let predicate = NSPredicate(format: "id = %d", id)
-            return try Clock.fetch(predicate).first
+            return (try? Clock.fetch(predicate).first) ?? newClock()
+        } else {
+            return newClock()
         }
-        return nil
     }
     
     class func fetch45() throws -> [Clock] {
         return try Clock.fetch(nil, 45)
     }
     
-    class func insertClock() {
+    class func newClock() -> Clock {
         let clock = Clock(context: DataModelHandler.default.moc)
         if let id = Int(Clock.date_yyyyMMdd) {
             clock.id = Int64(id)
         }
-        clock.clockIn = Date() as NSDate
+        return clock
+    }
+    
+    class func clockInUpdate() {
+        let todayClock = Clock.fetchToday()
+        todayClock.clockIn = Date() as NSDate
         DataModelHandler.default.saveContext()
     }
     
-    class func clockInUpdate() throws {
-        if let todayClock = try Clock.fetchToday() {
-            todayClock.clockIn = Date() as NSDate
-            DataModelHandler.default.saveContext()
-        } else {
-            Clock.insertClock()
-        }
+    class func clockOutUpdate() {
+        let todayClock = Clock.fetchToday()
+        todayClock.clockOut = Date() as NSDate
+        DataModelHandler.default.saveContext()
     }
     
-    class func clockOutUpdate() throws {
-        if let todayClock = try Clock.fetchToday() {
-            todayClock.clockOut = Date() as NSDate
-            DataModelHandler.default.saveContext()
-        } else {
-            Clock.insertClock()
-        }
+    class func clearClockIn() {
+        let todayClock = Clock.fetchToday()
+        todayClock.clockIn = nil
+        DataModelHandler.default.saveContext()
     }
     
-    class func clearClockIn() throws {
-        if let todayClock = try Clock.fetchToday() {
-            todayClock.clockIn = nil
-            DataModelHandler.default.saveContext()
-        } else {
-            Clock.insertClock()
-        }
-    }
-    
-    class func clearClockOut() throws {
-        if let todayClock = try Clock.fetchToday() {
-            todayClock.clockOut = nil
-            DataModelHandler.default.saveContext()
-        } else {
-            Clock.insertClock()
-        }
+    class func clearClockOut() {
+        let todayClock = Clock.fetchToday()
+        todayClock.clockOut = nil
+        DataModelHandler.default.saveContext()
     }
 }
