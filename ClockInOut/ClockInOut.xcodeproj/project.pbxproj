@@ -248,6 +248,7 @@
 				TargetAttributes = {
 					D3CEE05320BCE96C00709A7F = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1110;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -256,6 +257,7 @@
 					};
 					D3CEE08420BE389700709A7F = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1110;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -509,7 +511,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfw.ClockInOut01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -530,7 +532,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfw.ClockInOut01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -551,7 +553,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfw.ClockInOut01.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -572,7 +574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sfw.ClockInOut01.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

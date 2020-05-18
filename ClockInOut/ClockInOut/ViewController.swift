@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         
         refreshUI()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshUI), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshUI), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     @IBAction func clockInBtnPressed(_ sender: Any) {
