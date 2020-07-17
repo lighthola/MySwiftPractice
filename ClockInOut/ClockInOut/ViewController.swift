@@ -24,6 +24,19 @@ class ViewController: UIViewController {
         refreshUI()
         
         NotificationCenter.default.addObserver(self, selector: #selector(refreshUI), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        // Observe Core Data remote change notifications.
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(type(of: self).storeRemoteChange(_:)),
+            name: .NSPersistentStoreRemoteChange, object: DataModelHandler.default.persistentContainer.persistentStoreCoordinator)
+    }
+    
+    @objc
+    func storeRemoteChange(_ notification: Notification) {
+        print("✅###\(#function): Merging changes from the other persistent store coordinator.")
+        DispatchQueue.main.async {
+            self.refreshUI()
+        }
     }
     
     @IBAction func clockInBtnPressed(_ sender: Any) {

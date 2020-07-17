@@ -24,13 +24,20 @@ class DataModelHandler {
         // Migrate to App Group if needed
         migratePersistentStoreToAppGroup()
         
-        let container = NSPersistentContainer(name: dbName)
+        // Create a container that can load CloudKit-backed stores
+        let container = NSPersistentCloudKitContainer(name: dbName)
         
-        // Load the persistent store of App Group
-        let description = NSPersistentStoreDescription(url: appGroupPersistentStoreURL)
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("###\(#function): Failed to retrieve a persistent store description.")
+        }
+        description.url = appGroupPersistentStoreURL
+        
+        // Enable history tracking and remote notifications
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        description.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+        
         description.shouldInferMappingModelAutomatically = true
         description.shouldMigrateStoreAutomatically = true
-        container.persistentStoreDescriptions = [description]
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -47,6 +54,9 @@ class DataModelHandler {
         })
         
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        
+        // Pin the viewContext to the current generation token and set it to keep itself up to date with local changes.
+        container.viewContext.automaticallyMergesChangesFromParent = true
         
         return container
     }()
@@ -66,8 +76,10 @@ class DataModelHandler {
     }
 }
 
-// For Migrate To App Group
+// MARK: - Move the store to the path of App Group
+
 extension DataModelHandler {
+    
     var appGroupID: String {
         return "group.swp.test01"
     }
@@ -88,8 +100,10 @@ extension DataModelHandler {
         return FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID)!
     }
     
-    // Inspired by: coredata - move to app group target
-    // https://stackoverflow.com/questions/27253566/coredata-move-to-app-group-target#47551887
+    /**
+     Inspired by: coredata - move to app group target
+     https://stackoverflow.com/questions/27253566/coredata-move-to-app-group-target#47551887
+     */
     func migratePersistentStoreToAppGroup() {
         let oldStoreUrl = oldPersistentStoreURL
         let newStoreUrl = appGroupPersistentStoreURL
