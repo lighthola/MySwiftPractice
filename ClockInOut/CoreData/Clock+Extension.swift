@@ -28,13 +28,10 @@ extension Clock {
         return try Clock.fetch(nil, 365)
     }
     
-    class func fetchToday() -> Clock {
-        if let id = Int(Clock.date_yyyyMMdd) {
-            let predicate = NSPredicate(format: "id = %d", id)
-            return (try? Clock.fetch(predicate).first) ?? newClock()
-        } else {
-            return newClock()
-        }
+    class func fetchToday() -> Clock? {
+        guard let id = Int(Clock.date_yyyyMMdd) else { return nil }
+        let predicate = NSPredicate(format: "id = %d", id)
+        return try? Clock.fetch(predicate).first
     }
     
     class func fetch45() throws -> [Clock] {
@@ -50,26 +47,28 @@ extension Clock {
     }
     
     class func clockInUpdate() {
-        let todayClock = Clock.fetchToday()
+        let todayClock = Clock.fetchToday() ?? Clock.newClock()
         todayClock.clockIn = Date() as NSDate
         DataModelHandler.default.saveContext()
     }
     
     class func clockOutUpdate() {
-        let todayClock = Clock.fetchToday()
+        let todayClock = Clock.fetchToday() ?? Clock.newClock()
         todayClock.clockOut = Date() as NSDate
         DataModelHandler.default.saveContext()
     }
     
     class func clearClockIn() {
-        let todayClock = Clock.fetchToday()
-        todayClock.clockIn = nil
-        DataModelHandler.default.saveContext()
+        if let todayClock = Clock.fetchToday() {
+            todayClock.clockIn = nil
+            DataModelHandler.default.saveContext()
+        }
     }
     
     class func clearClockOut() {
-        let todayClock = Clock.fetchToday()
-        todayClock.clockOut = nil
-        DataModelHandler.default.saveContext()
+        if let todayClock = Clock.fetchToday() {
+            todayClock.clockOut = nil
+            DataModelHandler.default.saveContext()
+        }
     }
 }

@@ -18,23 +18,27 @@ protocol ClockInOutProtocol {
 
 class ClockInOutHandler: ClockInOutProtocol {
     
-    private var todayClock: Clock {
+    private var todayClock: Clock? {
         return Clock.fetchToday()
     }
    
     var isClockIn: Bool {
-        todayClock.clockIn != nil
+        guard let todayClock = todayClock else { return false }
+        return todayClock.clockIn != nil
     }
     
     var isClockOut: Bool {
-        todayClock.clockOut != nil
+        guard let todayClock = todayClock else { return false }
+        return todayClock.clockOut != nil
     }
     
     var clockInTime: String? {
+        guard let todayClock = todayClock else { return nil }
         return isClockIn ? formatter.string(from: todayClock.clockIn! as Date) : nil
     }
     
     var clockOutTime: String? {
+        guard let todayClock = todayClock else { return nil }
         return isClockOut ? formatter.string(from: todayClock.clockOut! as Date) : nil
     }
     
