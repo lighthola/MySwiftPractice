@@ -11,7 +11,7 @@ import UIKit
 class ClockHistoryTableViewController: UITableViewController {
 
     let handler = ClockInOutHandler()
-    var clockInfos: [Clock] = []
+    var clockInfos: [(clock: Clock, isExpand: Bool)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ClockHistoryTableViewController: UITableViewController {
     }
     
     func refreshClockInfos() {
-        clockInfos = handler.get45DaysInfos()
+        clockInfos = handler.get45DaysInfos().map{ ($0, false) }
         tableView.reloadData()
     }
 
@@ -51,14 +51,40 @@ class ClockHistoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let clock = clockInfos[indexPath.row]
+        let clock = clockInfos[indexPath.row].clock
+        let isExpand = clockInfos[indexPath.row].isExpand
         let isClockIn = clock.clockIn != nil ? "✅" : "🆘"
         let isClockOut = clock.clockOut != nil ? "✅" : "🆘"
         var date = String(clock.id)
         date.insert("-", at: date.index(date.startIndex, offsetBy: 4))
         date.insert("-", at: date.index(date.startIndex, offsetBy: 7))
-        cell.textLabel?.text = date + "    上班 " + isClockIn + "    下班 " + isClockOut
+        
+        var text = date + "    上班 " + isClockIn + "    下班 " + isClockOut
+        if isExpand {
+            var formatter: DateFormatter {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "HH:mm:ss"
+                return formatter
+            }
+            cell.textLabel?.numberOfLines = 0
+            if let clockIn = clock.clockIn {
+                
+                text += "\n上班：\(formatter.string(from: clockIn as Date))"
+            }
+            
+            if let clockOut = clock.clockOut {
+                text += "\n下班：\(formatter.string(from: clockOut as Date))"
+            }
+        } else {
+            cell.textLabel?.numberOfLines = 1
+        }
+        cell.textLabel?.text = text
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        clockInfos[indexPath.row].isExpand = !clockInfos[indexPath.row].isExpand
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
 
