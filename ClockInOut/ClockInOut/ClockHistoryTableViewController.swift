@@ -51,6 +51,7 @@ class ClockHistoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.selectionStyle = .none
         let clock = clockInfos[indexPath.row].clock
         let isExpand = clockInfos[indexPath.row].isExpand
         let isClockIn = clock.clockIn != nil ? "✅" : "🆘"
